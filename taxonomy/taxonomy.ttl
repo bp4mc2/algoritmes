@@ -135,26 +135,26 @@ ar:RuleBasedAlgorithm a skos:Concept;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
-ar:CaseBasedAlgorithm a skos:Concept;
+ar:MachineLearningAlgorithm a skos:Concept;
   rdfs:label "rule based"@en;
   skos:prefLabel
     "zelflerend algoritme"@nl,
-    "case based algorithm"@en;
+    "machine learning algorithm"@en;
   skos:altLabel
-    "machine learning algorithm"@en,
+    "case based algorithm"@en,
     "self-learning algorithm"@en;
   skos:definition 
     "Zelflerende algoritmes kunnen zelf verbanden ontdekken in gegevens."@nl, 
-    "Case based algorithms can discover connections in data themselves."@en;
+    "A machine learning algorithm can discover connections in data themselves."@en;
   skosthes:broaderGeneric ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
-ar:AlgorithmUsage a skos:Concept;
-  rdfs:label "algorithm usage"@en;
+ar:AlgorithmApplication a skos:Concept;
+  rdfs:label "algorithm application"@en;
   skos:prefLabel
     "algoritmische toepassing"@nl,
-    "algorithm usage"@en;
+    "algorithm application"@en;
   skos:definition 
     "Een toepassing waarbij algoritmen worden ingezet."@nl, 
     "An application that uses algorithms."@en;
@@ -163,7 +163,7 @@ ar:AlgorithmUsage a skos:Concept;
 .
 
 ar:AlgorithmRegister a skos:Concept;
-  rdfs:label "algorithm register"@nl;
+  rdfs:label "algorithm register"@en;
   skos:prefLabel
     "algoritme register"@nl,
     "algorithm register"@en;
@@ -229,7 +229,9 @@ ar:Type a skos:Concept;
   skos:definition 
     "Is het algoritme regelgebaseerd of zelflerend?"@nl, 
     "An indication wether the model, algorithm or AI is descriptive, diagnostic, predictive or prescriptive. This information can be used as a possible risk indicator."@en;
-  skos:editorialNote "De Nederlandse definitie is anders dan de Engelse definitie";
+  skos:editorialNote 
+    "De Nederlandse definitie is anders dan de Engelse definitie: regelgebaseerd of zelflerend versus descriptive, diagnostic, predictive or prescriptive."@nl,
+    "The Dutch definition differs from the English definition: rule-based or machine learning versus descriptive, diagnostic, predictive or prescriptive"@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -246,6 +248,9 @@ ar:Category a skos:Concept;
   skos:definition 
     "Het domein waarin het algoritme wordt ingezet."@nl, 
     "The domain in which the algorithm will be deployed?"@en;
+  skos:scopeNote 
+    "mogelijke waarden: belastingen; wonen, werken en leefomgeving; cultuur; sport en vrije tijd; defentie; economie en ondernemerschap, gezin, jeugd en huishoudens; financiën; algemeen; gezondheid en gezondheidszorg; immigratie en integratie; internationale samenwerking en ontwikkelingshulp; landbouw, natuur en voedsel; milieu, ruimtelijke ordening en water; onderwijs en wetenschap; openbare orde en veiligheid; overheid; justitie; reizen, wonen en werken in het buitenland; subsidies en toeslagen; verkeer en vervoer; werk en carrière"@nl,
+    "possible values: taxes; living, working and living environment; culture; sports and leisure; defense; economics and entrepreneurship, family, youth and households; finance; general; health and health care; immigration and integration; international cooperation and development aid; agriculture, nature and food; environment, spatial planning and water; education and science; public order and safety; government; justice; travel, live and work abroad; subsidies and allowances; Traffic and transport; work and career"@dn;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -271,6 +276,9 @@ ar:Status a skos:Concept;
   skos:definition 
     "Is het algoritme in ontwikkeling, in gebruik, of buiten gebruik?"@nl, 
     "An indicator wether the model, algorithm or AI is in development, in use, or archived."@en;
+  skos:scopeNote 
+    "mogelijke waarden ontleed aan adms:status - gepland, ontwerp, in ontwikkeling, pilot, ter evaluatie, operationeel, teruggetrokken"@nl,
+    "possible values derived from adms:status - planned, draft, in development, pilot, under evaluation, operational, withdrawn"@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -361,7 +369,9 @@ ar:ApplicationUrl a skos:Concept;
   skos:definition 
     "URL van de applicatiepagina van de ontwikkelaar/aanbieder van het algoritme."@nl, 
     "The URL reference to the code base of the algorithmic application"@en;
-  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:editorialNote 
+    "De Nederlandse en Engelse definities zijn niet hetzelfde: applicatie pagina versus code base."@nl,
+    "The Dutch and English definitions are not the same: application page versus code base."@en;  
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -373,7 +383,9 @@ ar:Publiccode a skos:Concept;
   skos:definition 
     "URL van de code base van het algoritme."@nl, 
     "The URL reference to the the PublicCode.yml standard if available"@en;
-  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:editorialNote 
+    "De Nederlandse en Engelse definities zijn niet hetzelfde: code base versus PublicCode.yml metadata beschrijving."@nl,
+    "The Dutch and English definitions are not the same: code base versus PublicCode.yml metadata description."@en;  
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -387,7 +399,9 @@ ar:MPRD a skos:Concept;
   skos:definition 
     "Is het algoritme direct gekoppeld aan een basisregistratie?"@nl, 
     "An indication wether a connection is being made to the Municipal Personal Records Database."@en;
-  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:editorialNote 
+    "De Nederlandse en Engelse definities zijn niet hetzelfde: basisregistratie personen versus basisregistraties in het algemeen."@nl,
+    "The Dutch and English definitions are not the same: Municipal Personal Records Database versus key registers in general"@en;  
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -399,6 +413,9 @@ ar:SourceData a skos:Concept;
   skos:definition 
     "Een overzicht van de databronnen die gebruikt worden door of bij het maken of trainen van het algoritme."@nl, 
     "Please give an overview of the data that is being processed by the algorithm. It should describe the pupose with which each data source is added and possible dependencies that result from this."@en;
+  skos:editorialNote 
+    "De Nederlandse en Engelse definities zijn niet hetzelfde: databronen voor maken of trainen versus bronnen voor toepassing."@nl,
+    "The Dutch and English definitions are not the same: data sources for creating or training versus sources for processing."@en;  
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -410,6 +427,9 @@ ar:MethodsAndModels a skos:Concept;
   skos:definition 
     "Standaard methoden of modellen die het algoritme gebruikt."@nl, 
     "Please indicate which known methods or models the algorithm is using."@en ;
+  skos:editorialNote 
+    "Een uitbreidbare lijst met methoden en modellen zou helpen."@nl,
+    "An expandable list of methods and models would be usefull."@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -436,6 +456,9 @@ ar:HumanIntervention a skos:Concept;
   skos:definition 
     "Een omschrijving van hoe uitkomsten van het algoritme door een mens gecontroleerd en bijgesteld (kunnen) worden."@nl, 
     "Please describe how the outcomes of the algorithm can be intervened by humans. It should detail how the responsibility for possible human intervention is secured, so it's clear who can and may act."@en;
+  skos:editorialNote 
+    "Een  lijst met wijzen van interventie zou helpen, bijvoorbeeld human-on-the-loop en human-in-the-loop."@nl,
+    "A list of intervention modes would help, eg human-on-the-loop and human-in-the-loop."@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -447,6 +470,9 @@ ar:Risks a skos:Concept;
   skos:definition 
     "Een overzicht van de voorziene risico's."@nl, 
     "Please indicate which risk assessment was used and give an overview of the risks and mitigation measures."@en;
+  skos:scopeNote 
+    "mogelijke waarden: minimaal risico, beperkt risico, hoog risico, onaanvaardbaar."@nl,
+    "possible values: minimal risk, limited risk, high risk, unacceptable."@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -506,7 +532,7 @@ ar:DPIADescription a skos:Concept;
     "Description of the DPIA"@en;
   skos:definition 
     "Een overzicht van de belangrijkste zaken die uit de data protection impact assessment (DPIA) naar voren kwamen."@nl, 
-    "Please give an overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
+    "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -517,7 +543,7 @@ ar:ObjectionProcedure a skos:Concept;
     "Objection procedure"@en;
   skos:definition 
     "Een omschrijving van hoe burgers en bedrijven bezwaar kunnen maken tegen de uitkomsten van het algoritme."@nl, 
-    "Please describe in what way can citizens object against the use or outcome of the algorithm."@en;
+    "A description in what way can citizens object against the use or outcome of the algorithm."@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -591,6 +617,9 @@ ar:Lang a skos:Concept;
   skos:definition 
     "De taal waarin deze registratie is ingevoerd."@nl, 
     "ISO 639-1 for the language in which this registration was filled in"@en;
+  skos:scopeNote 
+    "De Nederlandse definitie verschilt van de Engelse definitie: de taal, zonder te specificeren hoe deze wordt genoteerd versus de ISO 639-1 notitie"@nl,
+    "The Dutch definition differs from the English definition: the language, without specifying how it is notated versus the ISO 639-1 notation"@en,
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
