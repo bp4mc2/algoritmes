@@ -619,7 +619,7 @@ ar:Lang a skos:Concept;
     "ISO 639-1 for the language in which this registration was filled in"@en;
   skos:scopeNote 
     "De Nederlandse definitie verschilt van de Engelse definitie: de taal, zonder te specificeren hoe deze wordt genoteerd versus de ISO 639-1 notitie"@nl,
-    "The Dutch definition differs from the English definition: the language, without specifying how it is notated versus the ISO 639-1 notation"@en,
+    "The Dutch definition differs from the English definition: the language, without specifying how it is notated versus the ISO 639-1 notation"@en;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
