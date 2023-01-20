@@ -1,0 +1,606 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#>.
+@prefix skoslex: <http://bp4mc2.org/def/skos-lex#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ar: <http://algoritmes.overheid.nl/id/concept/>.
+@prefix person: <http://www.w3.org/ns/person#>.
+@prefix org: <http://www.w3.org/ns/org#>.
+@prefix loc: <http://www.w3.org/ns/locn#>.
+
+#Conceptschema
+<http://algoritmes.overheid.nl/id/ConceptScheme/AlgorithmConcepts> a skos:ConceptScheme;
+  rdfs:label "concept scheme Dutch algorithm register"@en;
+  skos:prefLabel 
+    "Begrippenkader algoritmeregister"@nl,
+    "Concept scheme Dutch algorithm register"@en;
+  dcterms:creator "Ministerie van BZK";
+  dcterms:description "Een thesaurus van alle concepten in de registratie van de inzet van modellen, algoritmes en AI in beleid en besluitvormingsprocessen in Nederlandse 0verheidsorganisaties.";
+  dcterms:language "nl";
+  dcterms:publisher "Ministerie van BZK";
+  dcterms:rights <https://creativecommons.org/licenses/by/4.0/deed.nl>;
+.
+
+#Collecties
+<http://algoritmes.overheid.nl/id/collection/BasicInformation> a skos:Collection;
+  rdfs:label "basic information"@en;
+  skos:prefLabel 
+    "Algemene informatie"@nl,
+    "Basic information"@en;
+  skos:member
+    ar:Name,
+    ar:Organization,
+    ar:Department,
+    ar:DescriptionShort,
+    ar:Type,
+    ar:Category,
+    ar:Website,
+    ar:Status;
+.
+
+<http://algoritmes.overheid.nl/id/collection/UseCase> a skos:Collection;
+  rdfs:label "use case"@en;
+  skos:prefLabel 
+    "Inzet"@nl,
+    "Use case"@en;
+  skos:member
+    ar:Goal,
+    ar:Impact,
+    ar:Proportionality,
+    ar:DecisionMakingProcess,
+    ar:Documentation;
+.
+
+<http://algoritmes.overheid.nl/id/collection/Application> a skos:Collection;
+  rdfs:label "application"@en;
+  skos:prefLabel 
+    "toepassing"@nl,
+    "application"@en;
+  skos:member
+    ar:Description,
+    ar:ApplicationUrl,
+    ar:Publiccode,
+    ar:MPRD,
+    ar:SourceData,
+    ar:MethodsAndModels;
+.
+
+<http://algoritmes.overheid.nl/id/collection/Oversight> a skos:Collection;
+  rdfs:label "oversight"@en;
+  skos:prefLabel 
+    "Toezicht"@nl,
+    "Oversight"@en;
+  skos:member
+    ar:Monitoring,
+    ar:HumanIntervention,
+    ar:Risks,
+    ar:PerformanceStandard;
+.
+
+<http://algoritmes.overheid.nl/id/collection/Legal> a skos:Collection;
+  rdfs:label "legal"@en;
+  skos:prefLabel 
+    "Juridisch"@nl,
+    "Legal"@en;
+  skos:member
+    ar:CompetentAuthority,
+    ar:LawfulBasis,
+    ar:DPIA,
+    ar:DPIADescription,
+    ar:ObjectionProcedure
+.
+
+<http://algoritmes.overheid.nl/id/collection/Metadata> a skos:Collection;
+  rdfs:label "metadata"@en;
+  skos:prefLabel 
+    "Metadata"@nl,
+    "Metadata"@en;
+  skos:member
+    ar:Schema,
+    ar:Id,
+    ar:Url,
+    ar:ContactEmail,
+    ar:Area,
+    ar:Lang,
+    ar:RevisionDate
+.
+
+
+#Concepten
+ar:Algorithm a skos:Concept;
+  rdfs:label "algorithm"@en;
+  skos:prefLabel 
+    "algoritme"@nl,
+    "algorithm"@en;
+  skos:definition 
+    "Een recept om een informaticaprobleem op te lossen vanuit een gegeven begintoestand naar een beoogd einddoel, dat bestaat uit een eindige reeks eenduidig gedefinieerde instructies of regels."@nl, 
+    "A recipe for solving a computer problem from a given initial state to an intended end, which consists of a finite set of unambiguously defined instructions or rules."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:RuleBasedAlgorithm a skos:Concept;
+  rdfs:label "rule based algorithm"@en;
+  skos:prefLabel
+    "regelgebaseerd algoritme"@nl,
+    "rule based algorithm"@en;
+  skos:definition 
+    "Een algoritme dat wordt uitgevoerd op basis van door mensen geformuleerde regels en zijn handmatig door mensen gebouwd, meestal op basis van wetten of verordeningen."@nl, 
+    "An algorithm that is run based on human-formulated rules and manually built by humans, usually based on laws or regulations."@en;
+  skosthes:broaderGeneric ar:Algorithm;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:CaseBasedAlgorithm a skos:Concept;
+  rdfs:label "rule based"@en;
+  skos:prefLabel
+    "zelflerend algoritme"@nl,
+    "case based algorithm"@en;
+  skos:altLabel
+    "machine learning algorithm"@en,
+    "self-learning algorithm"@en;
+  skos:definition 
+    "Zelflerende algoritmes kunnen zelf verbanden ontdekken in gegevens."@nl, 
+    "Case based algorithms can discover connections in data themselves."@en;
+  skosthes:broaderGeneric ar:Algorithm;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:AlgorithmUsage a skos:Concept;
+  rdfs:label "algorithm usage"@en;
+  skos:prefLabel
+    "algoritmische toepassing"@nl,
+    "algorithm usage"@en;
+  skos:definition 
+    "Een toepassing waarbij algoritmen worden ingezet."@nl, 
+    "An application that uses algorithms."@en;
+  skos:related ar:Algorithm;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:AlgorithmRegister a skos:Concept;
+  rdfs:label "algorithm register"@nl;
+  skos:prefLabel
+    "algoritme register"@nl,
+    "algorithm register"@en;
+  skos:definition 
+    "Een register met beschrijvingen van algoritmische toepassingen die direct of indirect een maatschappelijk en/of economisch effect hebben, op burgers of op de maatschappij als geheel."@nl, 
+    "A register with descriptions of algorithm usages that have a direct or indirect social and/or economic effect on citizens or on society as a whole."@en;
+  skos:related ar:AlgorithmUsage;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Name a skos:Concept;
+  rdfs:label "name"@en;
+  skos:prefLabel 
+    "Naam"@nl,
+    "Name"@en;
+  skos:definition 
+    "De naam die gebruikt wordt om dit algoritme aan te duiden."@nl, 
+    "The colloquial name used to identify this algorithm."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Organization a skos:Concept;
+  rdfs:label "organization"@en;
+  skos:prefLabel
+    "Organisatie"@nl,
+    "organization"@en;
+  skos:definition 
+    "De volledige naam van de organisatie verantwoordelijk voor de inzet van het algoritme."@nl, 
+    "The full name of the organization used to identify responsibility for use of the model, algorithm or AI"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Department a skos:Concept;
+  rdfs:label "department"@en;
+  skos:prefLabel
+    "afdeling"@nl,
+    "department"@en;
+  skos:altLabel
+    "divisie"@nl,
+    "division"@en;
+  skos:definition 
+    "De volledige naam van de afdeling of divisie verantwoordelijk voor de inzet van het algoritme."@nl, 
+    "The full name of the department or division used to specify responsibility for use of the model, algorithm or AI."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:DescriptionShort a skos:Concept;
+  rdfs:label "short description"@en;
+  skos:prefLabel
+    "korte omschrijving"@nl,
+    "short description"@en;
+  skos:definition 
+    "Een korte omschrijving van maximaal 150 karakters waarin hoog over omschreven wordt wat de rol is van het algoritme."@nl, 
+    "A short description of maximum 150 chars in order to give a quick overview of the purpose of the model, algorithm or AI."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Type a skos:Concept;
+  rdfs:label "type of algorithm"@en;
+  skos:prefLabel
+    "type algoritme"@nl,
+    "type of algorithm"@en;
+  skos:definition 
+    "Is het algoritme regelgebaseerd of zelflerend?"@nl, 
+    "An indication wether the model, algorithm or AI is descriptive, diagnostic, predictive or prescriptive. This information can be used as a possible risk indicator."@en;
+  skos:editorialNote "De Nederlandse definitie is anders dan de Engelse definitie";
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Category a skos:Concept;
+  rdfs:label "category"@nl;
+  skos:prefLabel 
+    "categorie"@nl,
+    "category"@en;
+  skos:altLabel
+    "thema"@nl,
+    "theme"@en,
+    "domein"@nl,
+    "domain"@en;
+  skos:definition 
+    "Het domein waarin het algoritme wordt ingezet."@nl, 
+    "The domain in which the algorithm will be deployed?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Website a skos:Concept;
+  rdfs:label "website"@en;
+  skos:prefLabel 
+    "publiekspagina"@nl,
+    "Website"@en;
+  skos:altLabel
+    "Website"@nl,
+    "Webpage"@en;
+  skos:definition 
+    "URL van de publieke algoritmeregister pagina over de inzet van het algoritme van de organisatie zelf."@nl, 
+    "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Status a skos:Concept;
+  rdfs:label "status"@en;
+  skos:prefLabel 
+    "status"@nl,
+    "status"@en;
+  skos:definition 
+    "Is het algoritme in ontwikkeling, in gebruik, of buiten gebruik?"@nl, 
+    "An indicator wether the model, algorithm or AI is in development, in use, or archived."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+
+
+
+ar:Goal a skos:Concept;
+  rdfs:label "goal"@en;
+  skos:prefLabel 
+    "doel"@nl,
+    "goal"@en;
+  skos:definition 
+    "Het doel waarvoor het algoritme ontwikkeld is en/of hoe de inzet ervan bijdraagt aan het behalen van die doelen."@nl, 
+    "The goals of the policy for which the algorithm is being/was put in place and how will the application expectedly contribute to reaching these goals?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Impact a skos:Concept;
+  rdfs:label "impact"@en;
+  skos:prefLabel 
+    "impact"@nl,
+    "impact"@en;
+  skos:definition 
+    "(1) De impact op burgers van de effecten van het algoritme, (2) onder welke omstandigheden dit gebeurt, en (3) wat de verwachte consequenties daarvan zijn voor het individu en/of de samenleving."@nl, 
+    "In what way will citizens come into contact with the effects of the algorithm. Under what specific circumstances will this happen and what are the expected consequences on the individual level and/or societal level?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Proportionality a skos:Concept;
+  rdfs:label "proportionality"@en;
+  skos:prefLabel 
+    "proportionaliteit"@nl,
+    "proportionality"@en;
+  skos:definition 
+    "Een afweging van de voor- en nadelen van de inzet van het algoritme en waarom dit redelijk gerechtvaardigd is."@nl, 
+    "An explanation why use of the algorithm is reasonably necessary and why the expected benefits outweigh any potential expected harm."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:DecisionMakingProcess a skos:Concept;
+  rdfs:label "decision-making process"@en;
+  skos:prefLabel 
+    "besluitvormingsproces"@nl,
+    "decision-making process"@en;
+  skos:definition 
+    "De naam van het bedrijfs- of besluitvormingsproces in de organisatie waarbinnen het algoritme wordt ingezet."@nl, 
+    "The formal process in the organisation in which the algorithm will be/is involved?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Documentation a skos:Concept;
+  rdfs:label "documentation"@en;
+  skos:prefLabel 
+    "documentatie"@nl,
+    "documentation"@en;
+  skos:altLabel
+    "Projectpagina"@nl,
+    "Projectpage"@en,
+    "Meer informatie"@nl,
+    "More information"@en;
+  skos:definition 
+    "URL van de projectpagina van de organisatie zelf over dit specifieke gebruik van het algoritme."@nl, 
+    "The URL reference to any extended information about the use of the algorithm within this specific use case."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+
+
+
+ar:Description a skos:Concept;
+  rdfs:label "description"@en;
+  skos:prefLabel 
+    "omschrijving"@nl,
+    "description"@en;
+  skos:definition 
+    "Een uitgebreide uitleg tussen de 500 en 10000 karakters van hoe het  algoritme werkt."@nl, 
+    "An extensive description between 500 and 10000 chars explaining the inner workings of the algorithm. It should detail all relevant aspects that are needed to understand how the algorithm processes data and feeds decision making."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:ApplicationUrl a skos:Concept;   
+  rdfs:label "application URL"@en;
+  skos:prefLabel 
+    "URL van de applicatie"@nl,
+    "application URL"@en;
+  skos:altLabel
+    "Source code URL"@enl;
+  skos:definition 
+    "URL van de applicatiepagina van de ontwikkelaar/aanbieder van het algoritme."@nl, 
+    "The URL reference to the code base of the algorithmic application"@en;
+  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Publiccode a skos:Concept; 
+  rdfs:label "central registration URL"@en;
+  skos:prefLabel 
+    "URL van de code base"@nl,
+    "URL of PublicCode.yml"@en;
+  skos:definition 
+    "URL van de code base van het algoritme."@nl, 
+    "The URL reference to the the PublicCode.yml standard if available"@en;
+  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:MPRD a skos:Concept;
+  rdfs:label "connections to data sources"@en;
+  skos:prefLabel 
+    "Koppelingen met basisregistraties"@nl,
+    "Connection to Municipal Personal Records Database"@en;
+  skos:altLabel
+    "Connection to Municipal Personal Records Database"@en;
+  skos:definition 
+    "Is het algoritme direct gekoppeld aan een basisregistratie?"@nl, 
+    "An indication wether a connection is being made to the Municipal Personal Records Database."@en;
+  skos:editorialNote "de Nederlandse en Engelse definities zijn niet hetzelfde"@nl;  
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:SourceData a skos:Concept;
+  rdfs:label "source data"@en;
+  skos:prefLabel 
+    "Brondata"@nl,
+    "Source data"@en;
+  skos:definition 
+    "Een overzicht van de databronnen die gebruikt worden door of bij het maken of trainen van het algoritme."@nl, 
+    "Please give an overview of the data that is being processed by the algorithm. It should describe the pupose with which each data source is added and possible dependencies that result from this."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:MethodsAndModels a skos:Concept;
+  rdfs:label "methods and models"@en;
+  skos:prefLabel 
+    "Methoden en modellen"@nl,
+    "Methods and models"@en;
+  skos:definition 
+    "Standaard methoden of modellen die het algoritme gebruikt."@nl, 
+    "Please indicate which known methods or models the algorithm is using."@en ;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+
+
+
+
+ar:Monitoring a skos:Concept;
+  rdfs:label "monitoring"@en;
+  skos:prefLabel 
+    "Monitoring"@nl,
+    "Monitoring"@en;
+  skos:definition 
+    "Een overzicht van hoe de inzet van het algoritme wordt gemonitord."@nl, 
+    "Please give a general overview of how the competent authority monitors the implementation of the model, algorithm or AI."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:HumanIntervention a skos:Concept;
+  rdfs:label "human intervention"@en;
+  skos:prefLabel 
+    "Menselijke tussenkomst"@nl,
+    "Human intervention"@en;
+  skos:definition 
+    "Een omschrijving van hoe uitkomsten van het algoritme door een mens gecontroleerd en bijgesteld (kunnen) worden."@nl, 
+    "Please describe how the outcomes of the algorithm can be intervened by humans. It should detail how the responsibility for possible human intervention is secured, so it's clear who can and may act."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Risks a skos:Concept;
+  rdfs:label "risks"@en;
+  skos:prefLabel 
+    "Risico's"@nl,
+    "Risks"@en;
+  skos:definition 
+    "Een overzicht van de voorziene risico's."@nl, 
+    "Please indicate which risk assessment was used and give an overview of the risks and mitigation measures."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:PerformanceStandard a skos:Concept;
+  rdfs:label "performance standard"@en;
+  skos:prefLabel 
+    "Prestatienormen"@nl,
+    "Performance standard"@en;
+  skos:definition 
+    "Een omschrijving van de verwachte prestaties van het algoritme en hoe die worden gemeten."@nl, 
+    "Please describe what the expected performance of the algorithm is and how this monitored."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+
+
+
+
+
+ar:CompetentAuthority a skos:Concept;
+  rdfs:label "competent authority"@en;
+  skos:prefLabel 
+    "Bevoegde autoriteit"@nl,
+    "Competent authority"@en;
+  skos:definition 
+    "Volledige naam van de bevoegde autoriteit verantwoordelijk voor de inzet van het algoritme."@nl, 
+    "What is the legal entity responsible for deployment of the model, algorithm or AI?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:LawfulBasis a skos:Concept;
+  rdfs:label "lawful basis"@en;
+  skos:prefLabel 
+    "Wettelijke grondslag"@nl,
+    "Lawful basis"@en;
+  skos:definition 
+    "Een omschrijving van de wettelijke grondslag voor de inzet van het algoritme, of URL van het formele besluit."@nl, 
+    "Which administrative act makes the use of the algorithm legitimate?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:DPIA a skos:Concept;
+  rdfs:label "Data protection impact assessment"@en;
+  skos:prefLabel 
+    "Data protection impact assessment"@nl,
+    "Data protection impact assessment"@en;
+  skos:definition 
+    "Is er een data protection impact assessment (DPIA) uitgevoerd?"@nl, 
+    "Has a data protection impact assessment been carried out?"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:DPIADescription a skos:Concept;
+  rdfs:label "description of the DPIA"@en;
+  skos:prefLabel 
+    "Omschrijving van de DPIA"@nl,
+    "Description of the DPIA"@en;
+  skos:definition 
+    "Een overzicht van de belangrijkste zaken die uit de data protection impact assessment (DPIA) naar voren kwamen."@nl, 
+    "Please give an overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:ObjectionProcedure a skos:Concept;
+  rdfs:label "objection procedure"@en;
+  skos:prefLabel 
+    "Bezwaarprocedure"@nl,
+    "Objection procedure"@en;
+  skos:definition 
+    "Een omschrijving van hoe burgers en bedrijven bezwaar kunnen maken tegen de uitkomsten van het algoritme."@nl, 
+    "Please describe in what way can citizens object against the use or outcome of the algorithm."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+
+
+
+
+ar:Schema a skos:Concept;
+  rdfs:label "schema"@en;
+  skos:prefLabel 
+    "Schema"@nl,
+    "Schema"@en;
+  skos:altLabel
+    "Standaard"@nl,
+    "Standard"@en;
+  skos:definition 
+    "Het schema gebruikt voor deze registratie in machine leesbaar format."@nl, 
+    "Version of the standard used for this registration"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Id a skos:Concept;
+  rdfs:label "UUID"@en;
+  skos:prefLabel 
+    "Unieke identificatie"@nl,
+    "Unique identifier"@en;
+  skos:definition 
+    "De unieke identificatie (UUID) voor deze registratie."@nl, 
+    "Universally unique identifier for this registration"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Url a skos:Concept;
+  rdfs:label "URL of the registration"@en;
+  skos:prefLabel 
+    "URL van de bronregistratie"@nl,
+    "URL of the registration"@en;
+  skos:definition 
+    "URL van deze registratie of van het algoritmeregister waarin deze registratie is vastgelegd in machine leesbaar format."@nl, 
+    "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:ContactEmail a skos:Concept;
+  rdfs:label "contact person e-mail"@en;
+  skos:prefLabel 
+    "E-mailadres van de contactpersoon"@nl,
+    "Contact person e-mail"@en;
+  skos:definition 
+    "e-mailadres van de organisatie of de contactpersoon voor deze registratie."@nl, 
+    "E-mail address of the contact person for this registration"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Area a skos:Concept;
+  rdfs:label "geographical area"@en;
+  skos:prefLabel 
+    "Geografisch gebied"@nl,
+    "Geographical area"@en;
+  skos:definition 
+    "Het geografische gebied waarin het algoritme wordt ingezet."@nl, 
+    "Official name of the geographical area in which the algorithm is being used"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:Lang a skos:Concept;
+  rdfs:label "language"@en;
+  skos:prefLabel 
+    "Taal"@nl,
+    "Language"@en;
+  skos:definition 
+    "De taal waarin deze registratie is ingevoerd."@nl, 
+    "ISO 639-1 for the language in which this registration was filled in"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:RevisionDate a skos:Concept;
+  rdfs:label "revision date"@en;
+  skos:prefLabel 
+    "Herzieningsdatum"@nl,
+    "Revision date"@en;
+  skos:definition 
+    "De datum waarvoor deze registratie moet worden herzien."@nl, 
+    "Date before which this registration has to be revisited"@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
