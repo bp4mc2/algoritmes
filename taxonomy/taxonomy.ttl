@@ -36,17 +36,6 @@
 #Collecties
 
 
-<http://algoritmes.overheid.nl/id/collection/Oversight> a skos:Collection;
-  rdfs:label "oversight"@en;
-  skos:prefLabel 
-    "Toezicht"@nl,
-    "Oversight"@en;
-  skos:member
-    ar:Monitoring,
-    ar:HumanIntervention,
-    ar:Risks,
-    ar:PerformanceStandard;
-.
 
 <http://algoritmes.overheid.nl/id/collection/Legal> a skos:Collection;
   rdfs:label "legal"@en;
@@ -77,7 +66,8 @@
 .
 
 
-#Concepten
+### GENERAL CONCEPTS ###
+
 ar:Algorithm a skos:Concept;
   rdfs:label "algorithm"@en;
   skos:prefLabel 
@@ -139,6 +129,8 @@ ar:AlgorithmRegister a skos:Concept;
   skos:related ar:AlgorithmApplication;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
+
+### BASIC INFORMATION ###
 
 ar:BasicInformation a skos:Concept;
   rdfs:label "basic information"@en;
@@ -268,6 +260,8 @@ ar:Status a skos:Concept;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
+### USE CASE ###
+
 ar:UseCase a skos:Concept;
   rdfs:label "use case"@en;
   skos:prefLabel 
@@ -279,7 +273,6 @@ ar:UseCase a skos:Concept;
   skos:related ar:AlgorithmApplication;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
-
 
 ar:Goal a skos:Concept;
   rdfs:label "goal"@en;
@@ -346,6 +339,8 @@ ar:Documentation a skos:Concept;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
+### APPLICATION ###
+
 ar:Application a skos:Concept;
   rdfs:label "application"@en;
   skos:prefLabel 
@@ -354,17 +349,11 @@ ar:Application a skos:Concept;
   skos:definition 
     "De wijze waarop een algoritme wordt toegepast."@nl, 
     "The way in which the algorithm is applicated."@en;
-  skos:related ar:AlgorithmApplication;
-  skos:member
-    ar:Description,
-    ar:ApplicationUrl,
-    ar:Publiccode,
-    ar:MPRD,
-    ar:SourceData,
-    ar:MethodsAndModels;
+  skos:editorialNote
+    "De description gaat over de algoritmische toepassing, de overige eigenschappen gaan over een algoritme."@nl,
+    "The description is about the algorithmic application, the other properties are about an algorithm."@en;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
-
-
 
 ar:Description a skos:Concept;
   rdfs:label "description"@en;
@@ -374,6 +363,8 @@ ar:Description a skos:Concept;
   skos:definition 
     "Een uitgebreide uitleg tussen de 500 en 10000 karakters van hoe het  algoritme werkt."@nl, 
     "An extensive description between 500 and 10000 chars explaining the inner workings of the algorithm. It should detail all relevant aspects that are needed to understand how the algorithm processes data and feeds decision making."@en;
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:AlgorithmApplication;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -390,6 +381,8 @@ ar:ApplicationUrl a skos:Concept;
   skos:editorialNote 
     "De Nederlandse en Engelse definities zijn niet hetzelfde: applicatie pagina versus code base."@nl,
     "The Dutch and English definitions are not the same: application page versus code base."@en;  
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -404,6 +397,8 @@ ar:Publiccode a skos:Concept;
   skos:editorialNote 
     "De Nederlandse en Engelse definities zijn niet hetzelfde: code base versus PublicCode.yml metadata beschrijving."@nl,
     "The Dutch and English definitions are not the same: code base versus PublicCode.yml metadata description."@en;  
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -420,6 +415,8 @@ ar:MPRD a skos:Concept;
   skos:editorialNote 
     "De Nederlandse en Engelse definities zijn niet hetzelfde: basisregistratie personen versus basisregistraties in het algemeen."@nl,
     "The Dutch and English definitions are not the same: Municipal Personal Records Database versus key registers in general"@en;  
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -434,6 +431,8 @@ ar:SourceData a skos:Concept;
   skos:editorialNote 
     "De Nederlandse en Engelse definities zijn niet hetzelfde: databronen voor maken of trainen versus bronnen voor toepassing."@nl,
     "The Dutch and English definitions are not the same: data sources for creating or training versus sources for processing."@en;  
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -448,9 +447,24 @@ ar:MethodsAndModels a skos:Concept;
   skos:editorialNote 
     "Een uitbreidbare lijst met methoden en modellen zou helpen."@nl,
     "An expandable list of methods and models would be usefull."@en;
+  skosthes:broaderPartitive ar:Application;
+  skos:related ar:Algorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
+### OVERSIGHT ###
+
+<http://algoritmes.overheid.nl/id/collection/Oversight> a skos:Collection;
+  rdfs:label "oversight"@en;
+  skos:prefLabel 
+    "Toezicht"@nl,
+    "Oversight"@en;
+  skos:member
+    ar:Monitoring,
+    ar:HumanIntervention,
+    ar:Risks,
+    ar:PerformanceStandard;
+.
 
 
 
