@@ -24,51 +24,17 @@
   dcterms:language "nl";
   dcterms:publisher "Ministerie van BZK";
   dcterms:rights <https://creativecommons.org/licenses/by/4.0/deed.nl>;
+  skos:hasTopConcept 
+    ar:Algorithm,
+    ar:AlgorithmApplication,
+    ar:AlgorithmRegister,
+    ar:BasicInformation,
+    ar:UseCase,
+    
 .
 
 #Collecties
-<http://algoritmes.overheid.nl/id/collection/BasicInformation> a skos:Collection;
-  rdfs:label "basic information"@en;
-  skos:prefLabel 
-    "Algemene informatie"@nl,
-    "Basic information"@en;
-  skos:member
-    ar:Name,
-    ar:Organization,
-    ar:Department,
-    ar:DescriptionShort,
-    ar:Type,
-    ar:Category,
-    ar:Website,
-    ar:Status;
-.
 
-<http://algoritmes.overheid.nl/id/collection/UseCase> a skos:Collection;
-  rdfs:label "use case"@en;
-  skos:prefLabel 
-    "Inzet"@nl,
-    "Use case"@en;
-  skos:member
-    ar:Goal,
-    ar:Impact,
-    ar:Proportionality,
-    ar:DecisionMakingProcess,
-    ar:Documentation;
-.
-
-<http://algoritmes.overheid.nl/id/collection/Application> a skos:Collection;
-  rdfs:label "application"@en;
-  skos:prefLabel 
-    "toepassing"@nl,
-    "application"@en;
-  skos:member
-    ar:Description,
-    ar:ApplicationUrl,
-    ar:Publiccode,
-    ar:MPRD,
-    ar:SourceData,
-    ar:MethodsAndModels;
-.
 
 <http://algoritmes.overheid.nl/id/collection/Oversight> a skos:Collection;
   rdfs:label "oversight"@en;
@@ -170,7 +136,19 @@ ar:AlgorithmRegister a skos:Concept;
   skos:definition 
     "Een register met beschrijvingen van algoritmische toepassingen die direct of indirect een maatschappelijk en/of economisch effect hebben, op burgers of op de maatschappij als geheel."@nl, 
     "A register with descriptions of algorithm usages that have a direct or indirect social and/or economic effect on citizens or on society as a whole."@en;
-  skos:related ar:AlgorithmUsage;
+  skos:related ar:AlgorithmApplication;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
+
+ar:BasicInformation a skos:Concept;
+  rdfs:label "basic information"@en;
+  skos:prefLabel 
+    "Algemene informatie"@nl,
+    "Basic information"@en;
+  skos:definition 
+    "De algemene informatie over de algoritmische toepassing."@nl, 
+    "The basic information on the algorithm application."@en;
+  skos:related ar:AlgorithmApplication;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -182,6 +160,7 @@ ar:Name a skos:Concept;
   skos:definition 
     "De naam die gebruikt wordt om dit algoritme aan te duiden."@nl, 
     "The colloquial name used to identify this algorithm."@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -193,6 +172,7 @@ ar:Organization a skos:Concept;
   skos:definition 
     "De volledige naam van de organisatie verantwoordelijk voor de inzet van het algoritme."@nl, 
     "The full name of the organization used to identify responsibility for use of the model, algorithm or AI"@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -207,6 +187,7 @@ ar:Department a skos:Concept;
   skos:definition 
     "De volledige naam van de afdeling of divisie verantwoordelijk voor de inzet van het algoritme."@nl, 
     "The full name of the department or division used to specify responsibility for use of the model, algorithm or AI."@en;
+  skosthes:broaderPartitive ar:Organization;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -218,6 +199,7 @@ ar:DescriptionShort a skos:Concept;
   skos:definition 
     "Een korte omschrijving van maximaal 150 karakters waarin hoog over omschreven wordt wat de rol is van het algoritme."@nl, 
     "A short description of maximum 150 chars in order to give a quick overview of the purpose of the model, algorithm or AI."@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -232,6 +214,7 @@ ar:Type a skos:Concept;
   skos:editorialNote 
     "De Nederlandse definitie is anders dan de Engelse definitie: regelgebaseerd of zelflerend versus descriptive, diagnostic, predictive or prescriptive."@nl,
     "The Dutch definition differs from the English definition: rule-based or machine learning versus descriptive, diagnostic, predictive or prescriptive"@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -251,6 +234,7 @@ ar:Category a skos:Concept;
   skos:scopeNote 
     "mogelijke waarden: belastingen; wonen, werken en leefomgeving; cultuur; sport en vrije tijd; defentie; economie en ondernemerschap, gezin, jeugd en huishoudens; financiën; algemeen; gezondheid en gezondheidszorg; immigratie en integratie; internationale samenwerking en ontwikkelingshulp; landbouw, natuur en voedsel; milieu, ruimtelijke ordening en water; onderwijs en wetenschap; openbare orde en veiligheid; overheid; justitie; reizen, wonen en werken in het buitenland; subsidies en toeslagen; verkeer en vervoer; werk en carrière"@nl,
     "possible values: taxes; living, working and living environment; culture; sports and leisure; defense; economics and entrepreneurship, family, youth and households; finance; general; health and health care; immigration and integration; international cooperation and development aid; agriculture, nature and food; environment, spatial planning and water; education and science; public order and safety; government; justice; travel, live and work abroad; subsidies and allowances; Traffic and transport; work and career"@dn;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -265,6 +249,7 @@ ar:Website a skos:Concept;
   skos:definition 
     "URL van de publieke algoritmeregister pagina over de inzet van het algoritme van de organisatie zelf."@nl, 
     "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -279,10 +264,21 @@ ar:Status a skos:Concept;
   skos:scopeNote 
     "mogelijke waarden ontleed aan adms:status - gepland, ontwerp, in ontwikkeling, pilot, ter evaluatie, operationeel, teruggetrokken"@nl,
     "possible values derived from adms:status - planned, draft, in development, pilot, under evaluation, operational, withdrawn"@en;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
-
+ar:UseCase a skos:Concept;
+  rdfs:label "use case"@en;
+  skos:prefLabel 
+    "Inzet"@nl,
+    "Use case"@en;
+  skos:definition 
+    "De wijze waarop de algoritmische toepassing wordt ingezet."@nl, 
+    "The way in which the algorithm application is used."@en;
+  skos:related ar:AlgorithmApplication;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
 
 
 ar:Goal a skos:Concept;
@@ -293,6 +289,7 @@ ar:Goal a skos:Concept;
   skos:definition 
     "Het doel waarvoor het algoritme ontwikkeld is en/of hoe de inzet ervan bijdraagt aan het behalen van die doelen."@nl, 
     "The goals of the policy for which the algorithm is being/was put in place and how will the application expectedly contribute to reaching these goals?"@en;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -304,6 +301,7 @@ ar:Impact a skos:Concept;
   skos:definition 
     "(1) De impact op burgers van de effecten van het algoritme, (2) onder welke omstandigheden dit gebeurt, en (3) wat de verwachte consequenties daarvan zijn voor het individu en/of de samenleving."@nl, 
     "In what way will citizens come into contact with the effects of the algorithm. Under what specific circumstances will this happen and what are the expected consequences on the individual level and/or societal level?"@en;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -315,6 +313,7 @@ ar:Proportionality a skos:Concept;
   skos:definition 
     "Een afweging van de voor- en nadelen van de inzet van het algoritme en waarom dit redelijk gerechtvaardigd is."@nl, 
     "An explanation why use of the algorithm is reasonably necessary and why the expected benefits outweigh any potential expected harm."@en;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -326,6 +325,7 @@ ar:DecisionMakingProcess a skos:Concept;
   skos:definition 
     "De naam van het bedrijfs- of besluitvormingsproces in de organisatie waarbinnen het algoritme wordt ingezet."@nl, 
     "The formal process in the organisation in which the algorithm will be/is involved?"@en;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -342,9 +342,27 @@ ar:Documentation a skos:Concept;
   skos:definition 
     "URL van de projectpagina van de organisatie zelf over dit specifieke gebruik van het algoritme."@nl, 
     "The URL reference to any extended information about the use of the algorithm within this specific use case."@en;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
+ar:Application a skos:Concept;
+  rdfs:label "application"@en;
+  skos:prefLabel 
+    "toepassing"@nl,
+    "application"@en;
+  skos:definition 
+    "De wijze waarop een algoritme wordt toegepast."@nl, 
+    "The way in which the algorithm is applicated."@en;
+  skos:related ar:AlgorithmApplication;
+  skos:member
+    ar:Description,
+    ar:ApplicationUrl,
+    ar:Publiccode,
+    ar:MPRD,
+    ar:SourceData,
+    ar:MethodsAndModels;
+.
 
 
 
