@@ -111,8 +111,8 @@ ar:AlgorithmRegister a skos:Concept;
 ar:BasicInformation a skos:Concept;
   rdfs:label "basic information"@en;
   skos:prefLabel 
-    "Algemene informatie"@nl,
-    "Basic information"@en;
+    "algemene informatie"@nl,
+    "basic information"@en;
   skos:definition 
     "De algemene informatie over de algoritmische toepassing."@nl, 
     "The basic information on the algorithm application."@en;
@@ -123,8 +123,8 @@ ar:BasicInformation a skos:Concept;
 ar:Name a skos:Concept;
   rdfs:label "name"@en;
   skos:prefLabel 
-    "Naam"@nl,
-    "Name"@en;
+    "naam"@nl,
+    "name"@en;
   skos:definition 
     "De naam die gebruikt wordt om dit algoritme aan te duiden."@nl, 
     "The colloquial name used to identify this algorithm."@en;
@@ -135,7 +135,7 @@ ar:Name a skos:Concept;
 ar:Organization a skos:Concept;
   rdfs:label "organization"@en;
   skos:prefLabel
-    "Organisatie"@nl,
+    "organisatie"@nl,
     "organization"@en;
   skos:definition 
     "De volledige naam van de organisatie verantwoordelijk voor de inzet van het algoritme."@nl, 
@@ -210,10 +210,10 @@ ar:Website a skos:Concept;
   rdfs:label "website"@en;
   skos:prefLabel 
     "publiekspagina"@nl,
-    "Website"@en;
+    "website"@en;
   skos:altLabel
-    "Website"@nl,
-    "Webpage"@en;
+    "website"@nl,
+    "webpage"@en;
   skos:definition 
     "URL van de publieke algoritmeregister pagina over de inzet van het algoritme van de organisatie zelf."@nl, 
     "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
@@ -241,8 +241,8 @@ ar:Status a skos:Concept;
 ar:UseCase a skos:Concept;
   rdfs:label "use case"@en;
   skos:prefLabel 
-    "Inzet"@nl,
-    "Use case"@en;
+    "inzet"@nl,
+    "use case"@en;
   skos:definition 
     "De wijze waarop de algoritmische toepassing wordt ingezet."@nl, 
     "The way in which the algorithm application is used."@en;
@@ -304,10 +304,10 @@ ar:Documentation a skos:Concept;
     "documentatie"@nl,
     "documentation"@en;
   skos:altLabel
-    "Projectpagina"@nl,
-    "Projectpage"@en,
-    "Meer informatie"@nl,
-    "More information"@en;
+    "projectpagina"@nl,
+    "projectpage"@en,
+    "meer informatie"@nl,
+    "more information"@en;
   skos:definition 
     "URL van de projectpagina van de organisatie zelf over dit specifieke gebruik van het algoritme."@nl, 
     "The URL reference to any extended information about the use of the algorithm within this specific use case."@en;
@@ -350,7 +350,7 @@ ar:ApplicationUrl a skos:Concept;
     "URL van de applicatie"@nl,
     "application URL"@en;
   skos:altLabel
-    "Source code URL"@enl;
+    "source code URL"@enl;
   skos:definition 
     "URL van de applicatiepagina van de ontwikkelaar/aanbieder van het algoritme."@nl, 
     "The URL reference to the code base of the algorithmic application"@en;
@@ -381,10 +381,10 @@ ar:Publiccode a skos:Concept;
 ar:MPRD a skos:Concept;
   rdfs:label "connections to data sources"@en;
   skos:prefLabel 
-    "Koppelingen met basisregistraties"@nl,
-    "Connection to Municipal Personal Records Database"@en;
+    "koppelingen met basisregistraties"@nl,
+    "connection to Municipal Personal Records Database"@en;
   skos:altLabel
-    "Connection to Municipal Personal Records Database"@en;
+    "connection to Municipal Personal Records Database"@en;
   skos:definition 
     "Is het algoritme direct gekoppeld aan een basisregistratie?"@nl, 
     "An indication wether a connection is being made to the Municipal Personal Records Database."@en;
@@ -399,8 +399,8 @@ ar:MPRD a skos:Concept;
 ar:SourceData a skos:Concept;
   rdfs:label "source data"@en;
   skos:prefLabel 
-    "Brondata"@nl,
-    "Source data"@en;
+    "brondata"@nl,
+    "source data"@en;
   skos:definition 
     "Een overzicht van de databronnen die gebruikt worden door of bij het maken of trainen van het algoritme."@nl, 
     "Please give an overview of the data that is being processed by the algorithm. It should describe the pupose with which each data source is added and possible dependencies that result from this."@en;
@@ -415,8 +415,8 @@ ar:SourceData a skos:Concept;
 ar:MethodsAndModels a skos:Concept;
   rdfs:label "methods and models"@en;
   skos:prefLabel 
-    "Methoden en modellen"@nl,
-    "Methods and models"@en;
+    "methoden en modellen"@nl,
+    "methods and models"@en;
   skos:definition 
     "Standaard methoden of modellen die het algoritme gebruikt."@nl, 
     "Please indicate which known methods or models the algorithm is using."@en ;
@@ -433,8 +433,8 @@ ar:MethodsAndModels a skos:Concept;
 ar:Oversight a skos:Concept;
   rdfs:label "oversight"@en;
   skos:prefLabel 
-    "Toezicht"@nl,
-    "Oversight"@en;
+    "toezicht"@nl,
+    "oversight"@en;
   skos:definition 
     "De wijze waarop toezicht wordt gehouden op een algoritmische toepassing."@nl, 
     "The way in which an algorithm application is overseen."@en;
@@ -445,8 +445,8 @@ ar:Oversight a skos:Concept;
 ar:Monitoring a skos:Concept;
   rdfs:label "monitoring"@en;
   skos:prefLabel 
-    "Monitoring"@nl,
-    "Monitoring"@en;
+    "monitoring"@nl,
+    "monitoring"@en;
   skos:definition 
     "Een overzicht van hoe de inzet van het algoritme wordt gemonitord."@nl, 
     "Please give a general overview of how the competent authority monitors the implementation of the model, algorithm or AI."@en;
@@ -457,8 +457,8 @@ ar:Monitoring a skos:Concept;
 ar:HumanIntervention a skos:Concept;
   rdfs:label "human intervention"@en;
   skos:prefLabel 
-    "Menselijke tussenkomst"@nl,
-    "Human intervention"@en;
+    "menselijke tussenkomst"@nl,
+    "human intervention"@en;
   skos:definition 
     "Een omschrijving van hoe uitkomsten van het algoritme door een mens gecontroleerd en bijgesteld (kunnen) worden."@nl, 
     "Please describe how the outcomes of the algorithm can be intervened by humans. It should detail how the responsibility for possible human intervention is secured, so it's clear who can and may act."@en;
@@ -472,8 +472,8 @@ ar:HumanIntervention a skos:Concept;
 ar:Risks a skos:Concept;
   rdfs:label "risks"@en;
   skos:prefLabel 
-    "Risico's"@nl,
-    "Risks"@en;
+    "risico's"@nl,
+    "risks"@en;
   skos:definition 
     "Een overzicht van de voorziene risico's."@nl, 
     "Please indicate which risk assessment was used and give an overview of the risks and mitigation measures."@en;
@@ -487,8 +487,8 @@ ar:Risks a skos:Concept;
 ar:PerformanceStandard a skos:Concept;
   rdfs:label "performance standard"@en;
   skos:prefLabel 
-    "Prestatienormen"@nl,
-    "Performance standard"@en;
+    "prestatienormen"@nl,
+    "performance standard"@en;
   skos:definition 
     "Een omschrijving van de verwachte prestaties van het algoritme en hoe die worden gemeten."@nl, 
     "Please describe what the expected performance of the algorithm is and how this monitored."@en;
@@ -501,8 +501,8 @@ ar:PerformanceStandard a skos:Concept;
 ar:Legal a skos:Concept;
   rdfs:label "legal"@en;
   skos:prefLabel 
-    "Juridisch"@nl,
-    "Legal"@en;
+    "juridisch"@nl,
+    "legal"@en;
   skos:definition 
     "De juridische aspecten van een algoritmische toepassing."@nl, 
     "The legal aspects of an algorithm application."@en;
@@ -514,8 +514,8 @@ ar:Legal a skos:Concept;
 ar:CompetentAuthority a skos:Concept;
   rdfs:label "competent authority"@en;
   skos:prefLabel 
-    "Bevoegde autoriteit"@nl,
-    "Competent authority"@en;
+    "bevoegde autoriteit"@nl,
+    "competent authority"@en;
   skos:definition 
     "Volledige naam van de bevoegde autoriteit verantwoordelijk voor de inzet van het algoritme."@nl, 
     "What is the legal entity responsible for deployment of the model, algorithm or AI?"@en;
@@ -526,8 +526,8 @@ ar:CompetentAuthority a skos:Concept;
 ar:LawfulBasis a skos:Concept;
   rdfs:label "lawful basis"@en;
   skos:prefLabel 
-    "Wettelijke grondslag"@nl,
-    "Lawful basis"@en;
+    "wettelijke grondslag"@nl,
+    "lawful basis"@en;
   skos:definition 
     "Een omschrijving van de wettelijke grondslag voor de inzet van het algoritme, of URL van het formele besluit."@nl, 
     "Which administrative act makes the use of the algorithm legitimate?"@en;
@@ -538,8 +538,8 @@ ar:LawfulBasis a skos:Concept;
 ar:DPIA a skos:Concept;
   rdfs:label "Data protection impact assessment"@en;
   skos:prefLabel 
-    "Data protection impact assessment"@nl,
-    "Data protection impact assessment"@en;
+    "data protection impact assessment"@nl,
+    "data protection impact assessment"@en;
   skos:definition 
     "Is er een data protection impact assessment (DPIA) uitgevoerd?"@nl, 
     "Has a data protection impact assessment been carried out?"@en;
@@ -550,8 +550,8 @@ ar:DPIA a skos:Concept;
 ar:DPIADescription a skos:Concept;
   rdfs:label "description of the DPIA"@en;
   skos:prefLabel 
-    "Omschrijving van de DPIA"@nl,
-    "Description of the DPIA"@en;
+    "omschrijving van de DPIA"@nl,
+    "description of the DPIA"@en;
   skos:definition 
     "Een overzicht van de belangrijkste zaken die uit de data protection impact assessment (DPIA) naar voren kwamen."@nl, 
     "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
@@ -562,8 +562,8 @@ ar:DPIADescription a skos:Concept;
 ar:ObjectionProcedure a skos:Concept;
   rdfs:label "objection procedure"@en;
   skos:prefLabel 
-    "Bezwaarprocedure"@nl,
-    "Objection procedure"@en;
+    "bezwaarprocedure"@nl,
+    "objection procedure"@en;
   skos:definition 
     "Een omschrijving van hoe burgers en bedrijven bezwaar kunnen maken tegen de uitkomsten van het algoritme."@nl, 
     "A description in what way can citizens object against the use or outcome of the algorithm."@en;
@@ -574,8 +574,8 @@ ar:ObjectionProcedure a skos:Concept;
 ar:Metadata a skos:Concept;
   rdfs:label "metadata"@en;
   skos:prefLabel 
-    "Metadata"@nl,
-    "Metadata"@en;
+    "metadata"@nl,
+    "metadata"@en;
   skos:definition 
     "De metadata van een algoritmische toepassing."@nl, 
     "The metadata of an algorithm application."@en;
@@ -586,11 +586,11 @@ ar:Metadata a skos:Concept;
 ar:Schema a skos:Concept;
   rdfs:label "schema"@en;
   skos:prefLabel 
-    "Schema"@nl,
-    "Schema"@en;
+    "schema"@nl,
+    "schema"@en;
   skos:altLabel
-    "Standaard"@nl,
-    "Standard"@en;
+    "standaard"@nl,
+    "standard"@en;
   skos:definition 
     "Het schema gebruikt voor deze registratie in machine leesbaar format."@nl, 
     "Version of the standard used for this registration"@en;
@@ -601,8 +601,8 @@ ar:Schema a skos:Concept;
 ar:Id a skos:Concept;
   rdfs:label "UUID"@en;
   skos:prefLabel 
-    "Unieke identificatie"@nl,
-    "Unique identifier"@en;
+    "unieke identificatie"@nl,
+    "unique identifier"@en;
   skos:definition 
     "De unieke identificatie (UUID) voor deze registratie."@nl, 
     "Universally unique identifier for this registration"@en;
@@ -626,7 +626,7 @@ ar:ContactEmail a skos:Concept;
   rdfs:label "contact person e-mail"@en;
   skos:prefLabel 
     "E-mailadres van de contactpersoon"@nl,
-    "Contact person e-mail"@en;
+    "contact person e-mail"@en;
   skos:definition 
     "e-mailadres van de organisatie of de contactpersoon voor deze registratie."@nl, 
     "E-mail address of the contact person for this registration"@en;
@@ -637,8 +637,8 @@ ar:ContactEmail a skos:Concept;
 ar:Area a skos:Concept;
   rdfs:label "geographical area"@en;
   skos:prefLabel 
-    "Geografisch gebied"@nl,
-    "Geographical area"@en;
+    "geografisch gebied"@nl,
+    "geographical area"@en;
   skos:definition 
     "Het geografische gebied waarin het algoritme wordt ingezet."@nl, 
     "Official name of the geographical area in which the algorithm is being used"@en;
@@ -649,8 +649,8 @@ ar:Area a skos:Concept;
 ar:Lang a skos:Concept;
   rdfs:label "language"@en;
   skos:prefLabel 
-    "Taal"@nl,
-    "Language"@en;
+    "taal"@nl,
+    "language"@en;
   skos:definition 
     "De taal waarin deze registratie is ingevoerd."@nl, 
     "ISO 639-1 for the language in which this registration was filled in"@en;
@@ -664,8 +664,8 @@ ar:Lang a skos:Concept;
 ar:RevisionDate a skos:Concept;
   rdfs:label "revision date"@en;
   skos:prefLabel 
-    "Herzieningsdatum"@nl,
-    "Revision date"@en;
+    "herzieningsdatum"@nl,
+    "revision date"@en;
   skos:definition 
     "De datum waarvoor deze registratie moet worden herzien."@nl, 
     "Date before which this registration has to be revisited"@en;
