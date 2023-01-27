@@ -13,7 +13,8 @@
 @prefix org: <http://www.w3.org/ns/org#>.
 @prefix loc: <http://www.w3.org/ns/locn#>.
 
-#Conceptschema
+### CONCEPT SCHEME ###
+
 <http://algoritmes.overheid.nl/id/ConceptScheme/AlgorithmConcepts> a skos:ConceptScheme;
   rdfs:label "concept scheme Dutch algorithm register"@en;
   skos:prefLabel 
@@ -31,40 +32,14 @@
     ar:AlgorithmRegister,
     ar:BasicInformation,
     ar:UseCase,
-    ar:Application;    
+    ar:Application,
+    ar:Oversight,
+    ar:Legal,
+    ar:Metadata;
 .
 
-#Collecties
+### Collections ###
 
-
-
-<http://algoritmes.overheid.nl/id/collection/Legal> a skos:Collection;
-  rdfs:label "legal"@en;
-  skos:prefLabel 
-    "Juridisch"@nl,
-    "Legal"@en;
-  skos:member
-    ar:CompetentAuthority,
-    ar:LawfulBasis,
-    ar:DPIA,
-    ar:DPIADescription,
-    ar:ObjectionProcedure
-.
-
-<http://algoritmes.overheid.nl/id/collection/Metadata> a skos:Collection;
-  rdfs:label "metadata"@en;
-  skos:prefLabel 
-    "Metadata"@nl,
-    "Metadata"@en;
-  skos:member
-    ar:Schema,
-    ar:Id,
-    ar:Url,
-    ar:ContactEmail,
-    ar:Area,
-    ar:Lang,
-    ar:RevisionDate
-.
 
 
 ### GENERAL CONCEPTS ###
@@ -455,20 +430,17 @@ ar:MethodsAndModels a skos:Concept;
 
 ### OVERSIGHT ###
 
-<http://algoritmes.overheid.nl/id/collection/Oversight> a skos:Collection;
+ar:Oversight a skos:Concept;
   rdfs:label "oversight"@en;
   skos:prefLabel 
     "Toezicht"@nl,
     "Oversight"@en;
-  skos:member
-    ar:Monitoring,
-    ar:HumanIntervention,
-    ar:Risks,
-    ar:PerformanceStandard;
+  skos:definition 
+    "De wijze waarop toezicht wordt gehouden op een algoritmische toepassing."@nl, 
+    "The way in which an algorithm application is overseen."@en;
+  skos:related ar:AlgorithmApplication;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
-
-
-
 
 ar:Monitoring a skos:Concept;
   rdfs:label "monitoring"@en;
@@ -478,6 +450,7 @@ ar:Monitoring a skos:Concept;
   skos:definition 
     "Een overzicht van hoe de inzet van het algoritme wordt gemonitord."@nl, 
     "Please give a general overview of how the competent authority monitors the implementation of the model, algorithm or AI."@en;
+  skosthes:broaderPartitive ar:Oversight;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -492,6 +465,7 @@ ar:HumanIntervention a skos:Concept;
   skos:editorialNote 
     "Een  lijst met wijzen van interventie zou helpen, bijvoorbeeld human-on-the-loop en human-in-the-loop."@nl,
     "A list of intervention modes would help, eg human-on-the-loop and human-in-the-loop."@en;
+  skosthes:broaderPartitive ar:Oversight;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -506,6 +480,7 @@ ar:Risks a skos:Concept;
   skos:scopeNote 
     "mogelijke waarden: minimaal risico, beperkt risico, hoog risico, onaanvaardbaar."@nl,
     "possible values: minimal risk, limited risk, high risk, unacceptable."@en;
+  skosthes:broaderPartitive ar:Oversight;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -517,12 +492,23 @@ ar:PerformanceStandard a skos:Concept;
   skos:definition 
     "Een omschrijving van de verwachte prestaties van het algoritme en hoe die worden gemeten."@nl, 
     "Please describe what the expected performance of the algorithm is and how this monitored."@en;
+  skosthes:broaderPartitive ar:Oversight;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
+### LEGAL ###
 
-
-
+ar:Legal a skos:Concept;
+  rdfs:label "legal"@en;
+  skos:prefLabel 
+    "Juridisch"@nl,
+    "Legal"@en;
+  skos:definition 
+    "De juridische aspecten van een algoritmische toepassing."@nl, 
+    "The legal aspects of an algorithm application."@en;
+  skos:related ar:AlgorithmApplication;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
 
 
 ar:CompetentAuthority a skos:Concept;
@@ -533,6 +519,7 @@ ar:CompetentAuthority a skos:Concept;
   skos:definition 
     "Volledige naam van de bevoegde autoriteit verantwoordelijk voor de inzet van het algoritme."@nl, 
     "What is the legal entity responsible for deployment of the model, algorithm or AI?"@en;
+  skosthes:broaderPartitive ar:Legal;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -544,6 +531,7 @@ ar:LawfulBasis a skos:Concept;
   skos:definition 
     "Een omschrijving van de wettelijke grondslag voor de inzet van het algoritme, of URL van het formele besluit."@nl, 
     "Which administrative act makes the use of the algorithm legitimate?"@en;
+  skosthes:broaderPartitive ar:Legal;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -555,6 +543,7 @@ ar:DPIA a skos:Concept;
   skos:definition 
     "Is er een data protection impact assessment (DPIA) uitgevoerd?"@nl, 
     "Has a data protection impact assessment been carried out?"@en;
+  skosthes:broaderPartitive ar:Legal;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -566,6 +555,7 @@ ar:DPIADescription a skos:Concept;
   skos:definition 
     "Een overzicht van de belangrijkste zaken die uit de data protection impact assessment (DPIA) naar voren kwamen."@nl, 
     "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
+  skosthes:broaderPartitive ar:Legal;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -577,12 +567,21 @@ ar:ObjectionProcedure a skos:Concept;
   skos:definition 
     "Een omschrijving van hoe burgers en bedrijven bezwaar kunnen maken tegen de uitkomsten van het algoritme."@nl, 
     "A description in what way can citizens object against the use or outcome of the algorithm."@en;
+  skosthes:broaderPartitive ar:Legal;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
-
-
-
+ar:Metadata a skos:Concept;
+  rdfs:label "metadata"@en;
+  skos:prefLabel 
+    "Metadata"@nl,
+    "Metadata"@en;
+  skos:definition 
+    "De metadata van een algoritmische toepassing."@nl, 
+    "The metadata of an algorithm application."@en;
+  skos:related ar:AlgorithmApplication;
+  skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
+.
 
 ar:Schema a skos:Concept;
   rdfs:label "schema"@en;
@@ -595,6 +594,7 @@ ar:Schema a skos:Concept;
   skos:definition 
     "Het schema gebruikt voor deze registratie in machine leesbaar format."@nl, 
     "Version of the standard used for this registration"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -606,6 +606,7 @@ ar:Id a skos:Concept;
   skos:definition 
     "De unieke identificatie (UUID) voor deze registratie."@nl, 
     "Universally unique identifier for this registration"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -617,6 +618,7 @@ ar:Url a skos:Concept;
   skos:definition 
     "URL van deze registratie of van het algoritmeregister waarin deze registratie is vastgelegd in machine leesbaar format."@nl, 
     "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -628,6 +630,7 @@ ar:ContactEmail a skos:Concept;
   skos:definition 
     "e-mailadres van de organisatie of de contactpersoon voor deze registratie."@nl, 
     "E-mail address of the contact person for this registration"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -639,6 +642,7 @@ ar:Area a skos:Concept;
   skos:definition 
     "Het geografische gebied waarin het algoritme wordt ingezet."@nl, 
     "Official name of the geographical area in which the algorithm is being used"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -653,6 +657,7 @@ ar:Lang a skos:Concept;
   skos:scopeNote 
     "De Nederlandse definitie verschilt van de Engelse definitie: de taal, zonder te specificeren hoe deze wordt genoteerd versus de ISO 639-1 notitie"@nl,
     "The Dutch definition differs from the English definition: the language, without specifying how it is notated versus the ISO 639-1 notation"@en;
+  skosthes:broaderPartitive ar:Metadata; 
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -664,5 +669,6 @@ ar:RevisionDate a skos:Concept;
   skos:definition 
     "De datum waarvoor deze registratie moet worden herzien."@nl, 
     "Date before which this registration has to be revisited"@en;
+  skosthes:broaderPartitive ar:Metadata;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
