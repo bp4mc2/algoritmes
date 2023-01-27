@@ -19,10 +19,11 @@
   skos:prefLabel 
     "Begrippenkader algoritmeregister"@nl,
     "Concept scheme Dutch algorithm register"@en;
-  dcterms:creator "Ministerie van BZK";
+  skos:editorialNote "Dit begrippenkader is nog niet formeel vastgesteld. De definities zijn ontleend aan de eerste versie van het algoritmeregister zoals gepubliceerd op  https://algoritmes.overheid.nl/. Dit is grotendeels gebaseerd op de versie 0.2 van https://standaard.algoritmeregister.org/."@nl;
+#  dcterms:creator "Ministerie van BZK";
   dcterms:description "Een thesaurus van alle concepten in de registratie van de inzet van modellen, algoritmes en AI in beleid en besluitvormingsprocessen in Nederlandse 0verheidsorganisaties.";
   dcterms:language "nl";
-  dcterms:publisher "Ministerie van BZK";
+#  dcterms:publisher "Ministerie van BZK";
   dcterms:rights <https://creativecommons.org/licenses/by/4.0/deed.nl>;
   skos:hasTopConcept 
     ar:Algorithm,
@@ -30,7 +31,7 @@
     ar:AlgorithmRegister,
     ar:BasicInformation,
     ar:UseCase,
-    
+    ar:Application;    
 .
 
 #Collecties
