@@ -52,6 +52,9 @@ ar:Algorithm a skos:Concept;
   skos:definition 
     "Een recept om een informaticaprobleem op te lossen vanuit een gegeven begintoestand naar een beoogd einddoel, dat bestaat uit een eindige reeks eenduidig gedefinieerde instructies of regels."@nl, 
     "A recipe for solving a computer problem from a given initial state to an intended end, which consists of a finite set of unambiguously defined instructions or rules."@en;
+  skos:narrower 
+    ar:RuleBasedAlgorithm,
+    ar:MachineLearningAlgorithm;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -117,6 +120,15 @@ ar:BasicInformation a skos:Concept;
     "De algemene informatie over de algoritmische toepassing."@nl, 
     "The basic information on the algorithm application."@en;
   skos:related ar:AlgorithmApplication;
+  skos:narrower 
+    ar:Name,
+    ar:Organization,
+    ar:Department,
+    ar:DescriptionShort,
+    ar:Type,
+    ar:Category,
+    ar:Website,
+    ar:Status;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -247,6 +259,12 @@ ar:UseCase a skos:Concept;
     "De wijze waarop de algoritmische toepassing wordt ingezet."@nl, 
     "The way in which the algorithm application is used."@en;
   skos:related ar:AlgorithmApplication;
+  skos:narrower
+    ar:Goal,
+    ar:Impact,
+    ar:Proportionality,
+    ar:DecisionMakingProcess, 
+    ar:Documentation;    
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -328,6 +346,13 @@ ar:Application a skos:Concept;
   skos:editorialNote
     "De description gaat over de algoritmische toepassing, de overige eigenschappen gaan over een algoritme."@nl,
     "The description is about the algorithmic application, the other properties are about an algorithm."@en;
+  skos:narrower
+    ar:Description,
+    ar:ApplicationUrl,
+    ar:Publiccode,
+    ar:MPRD,
+    ar:SourceData,
+    ar:MethodsAndModels;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -439,6 +464,11 @@ ar:Oversight a skos:Concept;
     "De wijze waarop toezicht wordt gehouden op een algoritmische toepassing."@nl, 
     "The way in which an algorithm application is overseen."@en;
   skos:related ar:AlgorithmApplication;
+  skos:narrower
+    ar:Monitoring,
+    ar:HumanIntervention,
+    ar:Risks,
+    ar:PerformanceStandard;    
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -507,6 +537,12 @@ ar:Legal a skos:Concept;
     "De juridische aspecten van een algoritmische toepassing."@nl, 
     "The legal aspects of an algorithm application."@en;
   skos:related ar:AlgorithmApplication;
+  skos:narrower
+    ar:CompetentAuthority,
+    ar:LawfulBasis,
+    ar:DPIA,
+    ar:DPIADescription,
+    ar:ObjectionProcedure;    
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
@@ -580,6 +616,14 @@ ar:Metadata a skos:Concept;
     "De metadata van een algoritmische toepassing."@nl, 
     "The metadata of an algorithm application."@en;
   skos:related ar:AlgorithmApplication;
+  skos:narrower
+    ar:Schema,
+    ar:Id,
+    ar:Url,
+    ar:ContactEmail,
+    ar:Area,
+    ar:Lang,
+    ar:RevisionDate;
   skos:inScheme <http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister>; 
 .
 
