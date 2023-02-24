@@ -9,14 +9,14 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix ar: <http://taxonomie.kadaster.nl/ar/id/concept/>.
-@prefix col-ar: <http://taxonomie.kadaster.nl/ar/id/Collection/>.
+@prefix col-ar: <http://taxonomie.kadaster.nl/ar/id/collection/>.
 @prefix person: <http://www.w3.org/ns/person#>.
 @prefix org: <http://www.w3.org/ns/org#>.
 @prefix loc: <http://www.w3.org/ns/locn#>.
 
 ### CONCEPT SCHEME ###
 
-<http://taxonomie.kadaster.nl/ar/id/ConceptScheme/AlgorithmConcepts> a skos:ConceptScheme;
+<http://taxonomie.kadaster.nl/ar/id/conceptscheme/AlgorithmConcepts> a skos:ConceptScheme;
   rdfs:label "concept scheme Dutch algorithm register"@en;
   skos:prefLabel 
     "Begrippenkader algoritmeregister"@nl,
@@ -41,7 +41,7 @@
 
 ### Collections ###
 
-col-ar: a skos:collection;
+col-ar: a skos:Collection;
   rdfs:label "algorithm types"@en;
   skos:prefLabel 
     "types algoritme"@nl,
