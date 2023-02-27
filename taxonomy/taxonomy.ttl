@@ -41,7 +41,7 @@
 
 ### Collections ###
 
-colar: a skos:Collection;
+colar:AgorithmTypes a skos:Collection;
   rdfs:label "algorithm types"@en;
   skos:prefLabel 
     "types algoritme"@nl,
