@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix ar: <http://taxonomie.kadaster.nl/ar/id/concept/>.
 @prefix colar: <http://taxonomie.kadaster.nl/ar/id/collection/>.
-@prefix schar: <http://taxonomie.kadaster.nl/ar/id/ConceptScheme/>.
+@prefix schar: <http://algoritmes.overheid.nl/id/ConceptScheme/>.
 @prefix person: <http://www.w3.org/ns/person#>.
 @prefix org: <http://www.w3.org/ns/org#>.
 @prefix loc: <http://www.w3.org/ns/locn#>.
