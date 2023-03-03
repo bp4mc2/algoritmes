@@ -16,7 +16,7 @@
 
 ### CONCEPT SCHEME ###
 
-<http://taxonomie.kadaster.nl/ar/id/ConceptScheme/AlgorithmConcepts> a skos:ConceptScheme;
+<http://algoritmes.overheid.nl/id/ConceptScheme/Algoritmeregister> a skos:ConceptScheme;
   rdfs:label "concept scheme Dutch algorithm register"@en;
   skos:prefLabel 
     "Begrippenkader algoritmeregister"@nl,
