@@ -236,12 +236,7 @@ ar:Status a skos:Concept;
     "De status van het algoritme: in ontwikkeling, in gebruik, of buiten gebruik."@nl, 
     "An indicator wether the model, algorithm or AI is in development, in use, or archived."@en;
   skos:scopeNote 
-    "De huidige status van het algoritme:
-- In ontwikkeling
-- In gebruik
-- Buiten gebruik.
-Indien het algoritme zowel in ontwikkeling als in gebruik is, kies voor ‘In gebruik’. Ten behoeve van de websitefunctionaliteit is het noodzakelijk om geen andere informatie in dit veld op te nemen dan een van de keuzes hierboven.
-Het is niet verplicht algoritmes in ontwikkeling te vermelden in het Algoritmeregister. De mogelijkheid wordt wel geboden voor organisaties die burgers willen betrekken al tijdens de ontwikkelingen van algoritmes."@nl;
+    "De huidige status van het algoritme: - In ontwikkeling - In gebruik - Buiten gebruik. Indien het algoritme zowel in ontwikkeling als in gebruik is, kies voor ‘In gebruik’. Ten behoeve van de websitefunctionaliteit is het noodzakelijk om geen andere informatie in dit veld op te nemen dan een van de keuzes hierboven. Het is niet verplicht algoritmes in ontwikkeling te vermelden in het Algoritmeregister. De mogelijkheid wordt wel geboden voor organisaties die burgers willen betrekken al tijdens de ontwikkelingen van algoritmes."@nl;
   skos:example
     "In gebruik"@nl;
   skosthes:broaderPartitive ar:BasicInformation;
