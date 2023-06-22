@@ -267,7 +267,7 @@ ar:StartDate a skos:Concept;
 ar:EndDate a skos:Concept;
   rdfs:label "end date"@en;
   skos:prefLabel
-    "eindatum"@nl,
+    "einddatum"@nl,
     "end date"@en;
   skos:definition
     "Maand waarin het algoritme buiten gebruik is genomen."@nl;
@@ -395,7 +395,7 @@ ar:Risks a skos:Concept;
   skos:example
     "Er is sprake van constante monitoring. Daardoor kan snel opgemerkt worden als een sensor defect is, waardoor weggebruikers lang stil moeten blijven staan. Dit kan dan snel verholpen worden om de nadelige gevolgen te beperken. Met enige regelmaat wordt ook in de praktijk gekeken naar of de sensoren voldoende reageren op de auto's en of de wachttijden eerlijk verdeeld zijn."@nl;
   skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:Oversight;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -442,12 +442,12 @@ ar:SourceDataset a skos:Concept;
     "source data set"@en;
   skos:definition 
     "Links naar aanvullende informatie over de gebruikte gegevensbronnen"@nl;
-  skosthes:broaderPartitive ar:Application;
   skos:scopeNote 
     "Lijst van links naar aanvullende informatie over de gebruikte gegevensbronnen. Hierbij kan bijvoorbeeld gelinkt worden naar metadata in publieke datacatalogi of naar sensorenregistraties."@nl;
   skos:example
     "https://datacatalogus.gemeentenoorderhaaks.nl/"@nl;
-  skos:related ar:Algorithm;
+  skos:related ar:SourceData;
+  skosthes:broaderPartitive ar:Application;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -565,7 +565,7 @@ ar:DPIADescription a skos:Concept;
   skos:example
     "DPIA: https://link.com, IAMA: https://link.nl"@nl;
   skos:related ar:DPIA;
-  skosthes:broaderPartitive ar:Legal;
+  skosthes:broaderPartitive ar:Application;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -683,7 +683,6 @@ ar:Department a skos:Concept;
   skos:definition 
     "De volledige naam van de afdeling of divisie verantwoordelijk voor de inzet van het algoritme."@nl, 
     "The full name of the department or division used to specify responsibility for use of the model, algorithm or AI."@en;
-  skosthes:broaderPartitive ar:Organization;
   skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
   skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
@@ -749,7 +748,7 @@ ar:Description a skos:Concept;
 ar:ApplicationUrl a skos:Concept;   
   rdfs:label "application URL"@en;
   skos:prefLabel 
-    "URL van de applicatie"@nl,
+    "URL van de applicatie (oud)"@nl,
     "application URL"@en;
   skos:altLabel
     "source code URL"@enl;
@@ -874,7 +873,7 @@ ar:ObjectionProcedure a skos:Concept;
 ar:Url a skos:Concept;
   rdfs:label "URL of the registration"@en;
   skos:prefLabel 
-    "URL van de bronregistratie"@nl,
+    "URL van de bronregistratie (oud)"@nl,
     "URL of the registration"@en;
   skos:definition 
     "URL van deze registratie of van het algoritmeregister waarin deze registratie is vastgelegd in machine leesbaar format."@nl, 
