@@ -1,0 +1,237 @@
+/* *
+ * Local CSS for Kadaster; added to standardized CSS
+ */
+
+table td p {
+    /*  pars within td are aligned on top. */
+    margin: 0 0 .5em 0;
+}
+div.FOUT {
+    background-color: orange;
+    color: black;
+}
+div.FOUT span {
+    background-color: red;
+    color: black;
+    font-weight: bold;
+}
+span.TODO {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+span.code {
+    font-family: monospace;
+    font-size: 120%;
+    background-color: #fff6e4;
+}
+span.local_note {
+    color: gray;
+}
+div.code {
+    font-family: monospace;
+    font-size: 100%;
+    background-color: #fff6e4;
+}
+div.code_xml {
+    font-family: monospace;
+    font-size: 100%;
+    background-color: #fff6e4;
+}
+div.code_java {
+    font-family: monospace;
+    font-size: 100%;
+    background-color: #fff6e4;
+}
+
+span.underline {
+    text-decoration: underline;
+}
+
+div.box {
+    background-color: #eeeeee;
+    padding: 0.5em 1em;
+}
+div.box_note {
+    background-color: #fafaac;
+    padding: 0.5em 1em;
+}
+div.box_warning {
+    background-color: #f6d99e;
+    padding: 0.5em 1em;
+}
+div.box_quote {
+    background-color: #f0e9da;
+    padding: 0.5em 1em;
+}
+div.box_quote_href {
+    text-align: right;
+    color: gray;
+}
+
+div.box_inner_label {
+   color: gray;
+   font-style: italic;
+}
+div.box_inner_body {
+   padding-left: 2em;
+}
+div.box_inner_href {
+   text-align: right;
+}
+
+table {
+    border-collapse: collapse;
+/*    border: 1px solid gray; */
+    border: 1px solid #FFFFFF;
+    width: 100%;
+    empty-cells: hide;
+}
+
+table tbody {
+	background-color: #E7F0F4;
+}
+table td {
+	border: 1px solid #FFFFFF;
+	hyphens: auto;
+	padding: 0.25em;
+	vertical-align: top;
+	font-size: 100%;
+	min-width: 100px;
+}
+table th {
+	background-color: #009ec2;
+	border: 1px solid #E7F0F4;
+	hyphens: auto;
+	padding: 0.25em;
+	vertical-align: top;
+	color: #FFFFFF;
+	font-weight: normal;
+}
+
+table tr:nth-child(even) {
+	background-color: #CBDFE9;
+}
+
+table th>p, table td>p {
+	margin: 0 0 1em;
+}
+
+caption {
+	font-style: italic;
+	text-align: left;
+}
+
+/* table th,
+table td {
+    border: 1px solid gray;
+    padding: 0.5em;
+    vertical-align: baseline;
+} 
+table th {
+    background-color: #eeeeee;
+    font-weight: bold;
+}*/
+/* table td {
+
+} - lege style */ 
+table.matrix, 
+table.matrix td {
+    border: 0px;
+}
+
+figure.image {
+   text-align: center;
+   font-style: normal;
+}
+
+/* figcaption.caption {
+   
+} - lege style */
+bdi.figno {
+    font-weight: bold;    
+}
+
+div.code_format {
+    font-size: 70%;
+    text-align: right;
+    color: gray;
+}
+div.code_format::before { 
+  content: "Format: ";
+}
+pre {
+	background-color: beige;
+}
+
+span.quote {
+    background-color: #f0e9da;
+}
+span.example {
+    background: #fcfaee;
+    padding: 0px;
+    border: 0px;
+}
+span.letop {
+    color: orange;
+    font-style: italic;
+}
+div.more-info {
+    font-size: 90%;
+    font-style: italic;
+}
+span.more-info {
+    font-style: italic;
+}
+
+/* Primer logos */
+
+a.external::before {
+    content: "\1F87D";    
+}
+a.primer::before {
+    content: "Primer";    
+}
+a.mim::before {
+    content: "MIM";    
+}
+a.logo {
+    font-size: 70%;
+    border: 1px solid gray;
+    border-radius: 0.5em;
+}
+a.logo.external {
+    background: white;
+}
+a.logo.primer {
+    background: #f2dfbe;
+    padding: 0em 0.5em !important;
+}
+a.logo.mim {
+    background: #b7dced;
+    padding: 0em 0.5em !important;
+}
+a.logo {
+    text-decoration: none;
+}
+/******************************************************************************/
+/*                           Kadaster classes section                               */
+/******************************************************************************/
+
+.deepheader {
+	margin-top: 1em;
+}
+
+.supplier {
+	color: gray;
+    display: none ;
+}
+
+.supplier::after {
+	content: " - ";
+}
+
+.small {
+	font-size: 80%;
+}
