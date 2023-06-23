@@ -1,0 +1,8 @@
+/* Style for Geonovum Document */
+
+@import "base.css";
+@import "localstyle.css";
+
+body {
+  background-image: url('logos/GN-BASIS.svg');
+}

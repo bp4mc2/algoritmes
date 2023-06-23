@@ -1,0 +1,8 @@
+/* Style for Geonovum Consultatieversie */
+
+@import "base.css";
+@import "localstyle.css";
+
+body {
+  background-image: url('logos/GN-CV.svg');
+}
