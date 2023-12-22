@@ -342,9 +342,7 @@ ar:Url a skos:Concept;
   skos:definition 
     "De URL van de locatie waar dit algoritme eerder al is vastgelegd; in machineleesbaar formaat. ."@nl, 
     "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
-  skos:scopeNote
-    "eesbaar formaat.
-Instructies Als de organisatie zelf ook een Algoritmeregister gepubliceerd heeft , dan kan vanaf hiernaar verwezen worden. Decentrale registers kunnen gewenst zijn, bijvoorbeeld om de eigen doelgroep aan te spreken. Begin een URL met https:// "@nl;
+  skos:scopeNote "Instructies Als de organisatie zelf ook een Algoritmeregister gepubliceerd heeft , dan kan vanaf hiernaar verwezen worden. Decentrale registers kunnen gewenst zijn, bijvoorbeeld om de eigen doelgroep aan te spreken. Begin een URL met https:// "@nl;
   skos:example
     "https://algorithmes.gemeentenoorderhaaks.nl"@nl;
   skosthes:broaderPartitive ar:BasicInformation;
