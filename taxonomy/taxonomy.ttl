@@ -126,6 +126,22 @@ ar:AlgorithmRegister a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+ar:Documentation a skos:Concept;
+  rdfs:label "documentation"@en;
+  skos:prefLabel 
+    "documentatie"@nl,
+    "documentation"@en;
+  skos:altLabel
+    "projectpagina"@nl,
+    "projectpage"@en,
+    "meer informatie"@nl,
+    "more information"@en;
+  skos:definition 
+    "URL van een webpagina."@nl, 
+    "The URL reference ."@en;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
 ### BASIC INFORMATION ###
 
 ar:BasicInformation a skos:Concept;
@@ -214,18 +230,18 @@ ar:Category a skos:Concept;
 ar:Type a skos:Concept;
   rdfs:label "type of algorithm"@en;
   skos:prefLabel
-    "zelflerend"@nl,
+    "publicatiecategorie"@nl,
     "type of algorithm"@en;
   skos:definition 
-    "Is het algoritme of zelflerend? In een niet-zelflerend algoritme specificeert de mens de regels die de computer moet volgen. Als het een zelflerend algoritme is, leert de machine over de patronen in de data."@nl, 
+    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening ‘Hoog-risico AI-systemen'. "@nl, 
     "An indication wether the model, algorithm or AI is descriptive, diagnostic, predictive or prescriptive. This information can be used as a possible risk indicator."@en;
   skos:scopeNote 
-    "Is het algoritme zelflerend? In een niet-zelflerend algoritme specificeert de mens de regels die de computer moet volgen. Als het een zelflerend algoritme is, leert de machine over de patronen in de data. In het geval dat een algoritme deels beiden doet, kies voor dan voor (zelf)lerend. Ten behoeve van de websitefunctionaliteit is het noodzakelijk om geen andere informatie in dit veld op te nemen dan een van de keuzes hierboven."@nl;
+    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), of Overige algoritmes (Categorie C) "@nl;
   skos:example
-    "Ja"@nl;
+    "Impactvolle algoritmes"@nl;
   skos:editorialNote 
-    "De Nederlandse definitie is anders dan de Engelse definitie: regelgebaseerd of zelflerend versus descriptive, diagnostic, predictive or prescriptive."@nl,
-    "The Dutch definition differs from the English definition: rule-based or machine learning versus descriptive, diagnostic, predictive or prescriptive"@en;
+    "De Nederlandse definitie is geëvolueerd ten opzichte vand e oorspronkelijke Engelse definitie: impactcategorie versus descriptive, diagnostic, predictive or prescriptive."@nl,
+    "The Dutch definition differs from the English definition: impact category versus descriptive, diagnostic, predictive or prescriptive"@en;
   skos:related ar:Algorithm;
   skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme schar:Algoritmeregister; 
@@ -314,6 +330,25 @@ ar:Website a skos:Concept;
     "https://gemeentenoorderhaaks/hoe-werkt-een-VRI"@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:BasicInformation;
+  skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:Url a skos:Concept;
+  rdfs:label "URL of the registration"@en;
+  skos:prefLabel 
+    "URL van de bronregistratie (oud)"@nl,
+    "URL of the registration"@en;
+  skos:definition 
+    "De URL van de locatie waar dit algoritme eerder al is vastgelegd; in machineleesbaar formaat. ."@nl, 
+    "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
+  skos:scopeNote
+    "eesbaar formaat.
+Instructies Als de organisatie zelf ook een Algoritmeregister gepubliceerd heeft , dan kan vanaf hiernaar verwezen worden. Decentrale registers kunnen gewenst zijn, bijvoorbeeld om de eigen doelgroep aan te spreken. Begin een URL met https:// "@nl;
+  skos:example
+    "https://algorithmes.gemeentenoorderhaaks.nl"@nl;
+  skosthes:broaderPartitive ar:BasicInformation;
+  skosthes:broaderGeneric ar:Documentation;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -399,6 +434,73 @@ ar:Risks a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+ar:DPIA a skos:Concept;
+  rdfs:label "impact assessment"@en;
+  skos:prefLabel 
+    "impacttoets"@nl,
+    "impact assessment"@en;
+  skos:definition 
+    "Welke impacttoetsen zijn gebruikt, zoals Data Protection Impact Asssesment (DPIA) of Impact Assessment Mensenrechten en Algoritmes (IAMA)? "@nl; 
+  skos:scopeNote 
+    "Naam/namen van uitgevoerde impacttoetsen. Aanbevolen worden een 'Data Protection Impact Asssesment (DPIA)' en een 'Impact Assessment Mensenrechten en Algoritmes (IAMA)'"@nl;
+  skos:example
+    "Impact Assessment Mensenrechten en Algoritmes (IAMA)"@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:DPIADescription a skos:Concept;
+  rdfs:label "description of impact assesments"@en;
+  skos:prefLabel 
+    "link naar de impacttoets"@nl;
+  skos:definition 
+    "Link naar de resultaten van een uitgevoerde impacttoets, zoals een DPIA IAMA."@nl, 
+    "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
+  skos:scopeNote 
+    "Link naar de resultaten van een impacttoets, indien deze is uitgevoerd en publiek beschikbaar is. Een voorbeeld hiervan is het impact assessment mensenrechten en algoritmes (IAMA) of het data protection impact assessment (DPIA). Formateer het dusdanig dat de naam van de toets gevolgd wordt door een dubbele punt en de URL. Als er meerdere zijn, kunnen deze gescheiden worden door komma's. Begin een URL met https://"@nl;
+  skos:example
+    "DPIA: https://link.com, IAMA: https://link.nl"@nl;
+  skos:related ar:DPIA;
+  skosthes:broaderPartitive ar:UseCase;
+  skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:LawfulBasis a skos:Concept;
+  rdfs:label "lawful basis"@en;
+  skos:prefLabel 
+    "wettelijke basis"@nl,
+    "lawful basis"@en;
+  skos:definition 
+    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl, 
+    "Which administrative act makes the use of the algorithm legitimate?"@en;
+  skos:scopeNote 
+    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl;
+  skos:example
+    ""@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:LawfulBasisSource a skos:Concept;
+  rdfs:label "lawful basis source"@en;
+  skos:prefLabel 
+    "link naar wettelijke basis"@nl,
+    "lawful basis source"@en;
+  skos:definition 
+    "Een link naar de wettelijke grondslag(en) voor het proces waarin het algoritme ingezet wordt."@nl;
+  skos:scopeNote 
+    "Een link naar de wettelijke grondslag(en) voor het proces waarin het algoritme ingezet wordt. Bijvoorbeeld: een wet, een verordening of een formeel besluit."@nl;
+  skos:example
+    "https://wetten.overheid.nl/BWBR0006622/2023-01-01"@nl;
+  skos:related ar:LawfulBasis;
+  skosthes:broaderPartitive ar:UseCase;
+  skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
 ### APPLICATION ###
 
 ar:Application a skos:Concept;
@@ -438,7 +540,7 @@ ar:SourceData a skos:Concept;
 ar:SourceDataset a skos:Concept;
   rdfs:label "source dataset"@en;
   skos:prefLabel 
-    "Link naar gegevensbronnen"@nl,
+    "link naar gegevensbronnen"@nl,
     "source data set"@en;
   skos:definition 
     "Links naar aanvullende informatie over de gebruikte gegevensbronnen"@nl;
@@ -448,6 +550,7 @@ ar:SourceDataset a skos:Concept;
     "https://datacatalogus.gemeentenoorderhaaks.nl/"@nl;
   skos:related ar:SourceData;
   skosthes:broaderPartitive ar:Application;
+  skosthes:broaderGeneric ar:Documentation;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -487,7 +590,7 @@ ar:Supplier a skos:Concept;
 ar:Publiccode a skos:Concept; 
   rdfs:label "source code URL"@en;
   skos:prefLabel 
-    "Link naar broncode"@nl,
+    "link naar broncode"@nl,
     "source code URL"@en;
   skos:definition 
     "Een URL naar de codepagina van de ontwikkelaar. Op deze pagina kunt u meer vinden over de code van het algoritme zelf."@nl, 
@@ -501,71 +604,7 @@ ar:Publiccode a skos:Concept;
     "https://github.com/haakssoftwarebedrijf/vrisoftware"@nl;
   skosthes:broaderPartitive ar:Application;
   skos:related ar:Algorithm;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:LawfulBasis a skos:Concept;
-  rdfs:label "lawful basis"@en;
-  skos:prefLabel 
-    "wettelijke basis"@nl,
-    "lawful basis"@en;
-  skos:definition 
-    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl, 
-    "Which administrative act makes the use of the algorithm legitimate?"@en;
-  skos:scopeNote 
-    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl;
-  skos:example
-    ""@nl;
-  skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:Application;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:LawfulBasisSource a skos:Concept;
-  rdfs:label "lawful basis source"@en;
-  skos:prefLabel 
-    "link naar wettelijke basis"@nl,
-    "lawful basis source"@en;
-  skos:definition 
-    "Een link naar de wettelijke grondslag(en) voor het proces waarin het algoritme ingezet wordt."@nl;
-  skos:scopeNote 
-    "Een link naar de wettelijke grondslag(en) voor het proces waarin het algoritme ingezet wordt. Bijvoorbeeld: een wet, een verordening of een formeel besluit."@nl;
-  skos:example
-    "https://wetten.overheid.nl/BWBR0006622/2023-01-01"@nl;
-  skos:related ar:LawfulBasis;
-  skosthes:broaderPartitive ar:Application;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:DPIA a skos:Concept;
-  rdfs:label "impact assessments"@en;
-  skos:prefLabel 
-    "impacttoetsen"@nl,
-    "impact assessments"@en;
-  skos:definition 
-    "Welke impacttoetsen zijn gebruikt, zoals Data Protection Impact Asssesment (DPIA) of Impact Assessment Mensenrechten en Algoritmes (IAMA)? "@nl; 
-  skos:scopeNote 
-    "Naam/namen van uitgevoerde impacttoetsen. Aanbevolen worden een 'Data Protection Impact Asssesment (DPIA)' en een 'Impact Assessment Mensenrechten en Algoritmes (IAMA)'"@nl;
-  skos:example
-    "Impact Assessment Mensenrechten en Algoritmes (IAMA)"@nl;
-  skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:Application;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:DPIADescription a skos:Concept;
-  rdfs:label "description of impact assesments"@en;
-  skos:prefLabel 
-    "link naar de impacttoets"@nl;
-  skos:definition 
-    "Link naar de resultaten van een uitgevoerde impacttoets, zoals een DPIA IAMA."@nl, 
-    "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
-  skos:scopeNote 
-    "Link naar de resultaten van een impacttoets, indien deze is uitgevoerd en publiek beschikbaar is. Een voorbeeld hiervan is het impact assessment mensenrechten en algoritmes (IAMA) of het data protection impact assessment (DPIA). Formateer het dusdanig dat de naam van de toets gevolgd wordt door een dubbele punt en de URL. Als er meerdere zijn, kunnen deze gescheiden worden door komma's. Begin een URL met https://"@nl;
-  skos:example
-    "DPIA: https://link.com, IAMA: https://link.nl"@nl;
-  skos:related ar:DPIA;
-  skosthes:broaderPartitive ar:Application;
+  skosthes:broaderGeneric ar:Documentation;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -617,7 +656,7 @@ ar:Schema a skos:Concept;
 ar:Id a skos:Concept;
   rdfs:label "UUID"@en;
   skos:prefLabel 
-    "Landelijk-ID"@nl;
+    "landelijk-ID"@nl;
   skos:definition 
     "De unieke code van dit algoritme in het landelijke register."@nl;
   skos:scopeNote 
@@ -644,12 +683,12 @@ ar:SourceId a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:Tags a skos:Concept;
-  rdfs:label "tags"@en;
+ar:Tag a skos:Concept;
+  rdfs:label "tag"@en;
   skos:prefLabel 
-    "zoektermen"@nl;
+    "zoekterm"@nl;
   skos:definition 
-    "Trefwoorden over het algoritme, om de vindbaarheid van een algoritmeregistratie te vergroten."@nl;
+    "Trefwoord over het algoritme, om de vindbaarheid van een algoritmeregistratie te vergroten."@nl;
   skos:scopeNote 
     "Termen gerelateerd aan dit algoritme. Gescheiden door komma's. Dit veld wordt niet weergegeven op de website en kan worden gebruikt om de vindbaarheid van de registratie te verbeteren. Zo kan bijvoorbeeld de naam van het relevante ministerie worden toegevoegd om als uitvoerorganisatie beter vindbaar te zijn met de zoekfunctie."@nl;
   skos:example
@@ -709,24 +748,6 @@ ar:DecisionMakingProcess a skos:Concept;
   skos:definition 
     "De naam van het bedrijfs- of besluitvormingsproces in de organisatie waarbinnen het algoritme wordt ingezet."@nl, 
     "The formal process in the organisation in which the algorithm will be/is involved?"@en;
-  skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
-  skosthes:broaderPartitive ar:Depricated;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:Documentation a skos:Concept;
-  rdfs:label "documentation"@en;
-  skos:prefLabel 
-    "documentatie"@nl,
-    "documentation"@en;
-  skos:altLabel
-    "projectpagina"@nl,
-    "projectpage"@en,
-    "meer informatie"@nl,
-    "more information"@en;
-  skos:definition 
-    "URL van de projectpagina van de organisatie zelf over dit specifieke gebruik van het algoritme."@nl, 
-    "The URL reference to any extended information about the use of the algorithm within this specific use case."@en;
   skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
   skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
@@ -865,19 +886,6 @@ ar:ObjectionProcedure a skos:Concept;
   skos:definition 
     "Een omschrijving van hoe burgers en bedrijven bezwaar kunnen maken tegen de uitkomsten van het algoritme."@nl, 
     "A description in what way can citizens object against the use or outcome of the algorithm."@en;
-  skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
-  skosthes:broaderPartitive ar:Depricated;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:Url a skos:Concept;
-  rdfs:label "URL of the registration"@en;
-  skos:prefLabel 
-    "URL van de bronregistratie (oud)"@nl,
-    "URL of the registration"@en;
-  skos:definition 
-    "URL van deze registratie of van het algoritmeregister waarin deze registratie is vastgelegd in machine leesbaar format."@nl, 
-    "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
   skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
   skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
