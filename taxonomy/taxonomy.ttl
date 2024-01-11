@@ -69,36 +69,6 @@ ar:Algorithm a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:RuleBasedAlgorithm a skos:Concept;
-  rdfs:label "rule based algorithm"@en;
-  skos:prefLabel
-    "regelgebaseerd algoritme"@nl,
-    "rule based algorithm"@en;
-  skos:definition 
-    "Een algoritme dat wordt uitgevoerd op basis van door mensen geformuleerde regels en zijn handmatig door mensen gebouwd, meestal op basis van wetten of verordeningen."@nl, 
-    "An algorithm that is run based on human-formulated rules and manually built by humans, usually based on laws or regulations."@en;
-  skosthes:broaderGeneric ar:Algorithm;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:MachineLearningAlgorithm a skos:Concept;
-  rdfs:label "rule based"@en;
-  skos:prefLabel
-    "zelflerend algoritme"@nl,
-    "machine learning algorithm"@en;
-  skos:altLabel
-    "case based algorithm"@en,
-    "self-learning algorithm"@en;
-  skos:definition 
-    "Zelflerende algoritmes kunnen zelf verbanden ontdekken in gegevens."@nl, 
-    "A machine learning algorithm can discover connections in data themselves."@en;
-  skos:scopeNote 
-    "Hierbij gaat om een algoritme dat is ontwikkeld op basis van voorbeelden die worden aangeboden aan een AI-toepassing. Op basis van dit leermateriaal worden door een computer, in een black box, algoritmes opgebouwd (machine learning). Deep learning is een vorm van machine learning waarbij dit in meerdere lagen gebeurt. Een mooi voorbeeld hiervan is een AI-toepassing voor tekstanalyse die in een eerste laag gewoon Nederlands kan interpreteren en in een tweede laag juridisch jargon."@nl,
-    "This involves an algorithm that has been developed based on examples that are offered to an AI application. Based on this learning material, a computer builds algorithms in a black box (machine learning). Deep learning is a form of machine learning in which this happens in several layers. A good example of this is an AI application for text analysis that can interpret ordinary Dutch in a first layer and legal jargon in a second layer."@en;
-  skosthes:broaderGeneric ar:Algorithm;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
 ar:AlgorithmApplication a skos:Concept;
   rdfs:label "algorithm application"@en;
   skos:prefLabel
@@ -153,6 +123,22 @@ ar:BasicInformation a skos:Concept;
     "De algemene informatie over de algoritmische toepassing."@nl, 
     "The basic information on the algorithm application."@en;
   skos:related ar:AlgorithmApplication;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:Publicationcategory a skos:Concept;
+  rdfs:label "publicationcategory"@en;
+  skos:prefLabel 
+    "publicatiecategorie"@nl,
+    "publicationcategory"@en;
+  skos:definition 
+    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening 'Hoog-risico AI-systemen'."@nl; 
+  skos:scopenote
+    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), Overige algoritmes (Categorie C)"@nl;
+  skos:example
+    "Impactvolle algoritmes"@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -465,6 +451,21 @@ ar:DPIADescription a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+ar:AssessmentExplanation a skos:Concept;
+  rdfs:label "explanation on assessments"@en;
+  skos:prefLabel 
+    "toelichting op impacttoetsen"@nl,
+    "explanation on assessments"@en;
+  skos:definition 
+    "Toelichting waarom bepaalde impacttoetsen niet gedaan zijn."@nl;
+  skos:scopeNote 
+    "Het is mogelijk dat er geen impacttoets nodig was voor het algoritme. Met dit veld kan toegelicht worden waarom bepaalde impacttoetsen niet gedaan zijn"@nl;
+  skos:example
+    "In het geval van de DPIA als er geen sprake is van persoonsgegevens."@nl;
+  skos:related ar:DPIA;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
 ar:LawfulBasis a skos:Concept;
   rdfs:label "lawful basis"@en;
   skos:prefLabel 
@@ -496,6 +497,38 @@ ar:LawfulBasisSource a skos:Concept;
   skos:related ar:LawfulBasis;
   skosthes:broaderPartitive ar:UseCase;
   skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:LawfulBasisTitle a skos:Concept;
+  rdfs:label "lawful basis title"@en;
+  skos:prefLabel 
+    "titel van wettelijke basis"@nl,
+    "title of lawful basis"@en;
+  skos:definition 
+    "Titel van de gelinkte wettelijke grondslag."@nl;
+  skos:scopeNote 
+    "Titel van de gelinkte wettelijke grondslag."@nl;
+  skos:example
+    "Wegenverkeerswet 1994"@nl;
+  skos:related ar:LawfulBasis;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:RecordsOfProcessingActivitiesLink a skos:Concept;
+  rdfs:label "Link to records of processing activities"@en;
+  skos:prefLabel 
+    "link naar verwerkingsregister"@nl,
+    "link to records of processing activities"@en;
+  skos:definition 
+    "Link naar een openbaar deel van een verwerkingsregister die betrekking heeft op een algoritme. Daar kan meer gelezen worden over verwerkingen."@nl;
+  skos:scopeNote 
+    "Link naar een openbaar deel van een verwerkingsregister die betrekking heeft op een algoritme. Daar kan meer gelezen worden over verwerkingen."@nl;
+  skos:example
+    "https://www.avgregisterrijksoverheid.nl"@nl;
+  skos:related ar:LawfulBasis;
+  skosthes:broaderPartitive ar:UseCase;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -549,6 +582,22 @@ ar:SourceDataset a skos:Concept;
   skos:related ar:SourceData;
   skosthes:broaderPartitive ar:Application;
   skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:SourceDataTitle a skos:Concept;
+  rdfs:label "source data title"@en;
+  skos:prefLabel 
+    "titel van gegevensbron"@nl,
+    "title of source data"@en;
+  skos:definition 
+    "Titel van de gelinkte gegevensbron"@nl; 
+  skos:scopeNote 
+    "titel van de gelinkte gegevensbron"@nl;
+  skos:example
+    ""@nl;
+  skosthes:broaderPartitive ar:Application; 
+  skos:related ar:SourceData;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -651,21 +700,6 @@ ar:Schema a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:Id a skos:Concept;
-  rdfs:label "UUID"@en;
-  skos:prefLabel 
-    "landelijk-ID"@nl;
-  skos:definition 
-    "De unieke code van dit algoritme in het landelijke register."@nl;
-  skos:scopeNote 
-    "De unieke identificatie van deze registratie in het landelijke Algoritmeregister. Bij het aanleveren van deze registratie wordt er automatisch een UUID gegenereerd door de database van het landelijk Algoritmeregister. Hier dient bij de eerste aanlevering dus niks handmatig ingevuld te worden.Bij het wijzigen van registraties kan naar deze ID verwezen worden om de juiste registratie te vinden. In het geval van een update van een al bestaand en gepubliceerde egistratie, moet de ID in de toekomst wel worden ingevuld."@nl;
-  skos:example
-    ""@nl;
-  skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:Metadata;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
 ar:SourceId a skos:Concept;
   rdfs:label "source id"@en;
   skos:prefLabel 
@@ -706,6 +740,21 @@ ar:Depricated a skos:Concept;
     "depricated concepts"@en;
   skos:definition 
     "Vervallen begrippen die zijn gebruikt in oudere versies dan versie 0.4."@nl; 
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:Id a skos:Concept;
+  rdfs:label "UUID"@en;
+  skos:prefLabel 
+    "landelijk-ID"@nl;
+  skos:definition 
+    "De unieke code van dit algoritme in het landelijke register."@nl;
+  skos:scopeNote 
+    "De unieke identificatie van deze registratie in het landelijke Algoritmeregister. Bij het aanleveren van deze registratie wordt er automatisch een UUID gegenereerd door de database van het landelijk Algoritmeregister. Hier dient bij de eerste aanlevering dus niks handmatig ingevuld te worden.Bij het wijzigen van registraties kan naar deze ID verwezen worden om de juiste registratie te vinden. In het geval van een update van een al bestaand en gepubliceerde egistratie, moet de ID in de toekomst wel worden ingevuld."@nl;
+  skos:example
+    ""@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -902,3 +951,32 @@ ar:RevisionDate a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+ar:RuleBasedAlgorithm a skos:Concept;
+  rdfs:label "rule based algorithm"@en;
+  skos:prefLabel
+    "regelgebaseerd algoritme"@nl,
+    "rule based algorithm"@en;
+  skos:definition 
+    "Een algoritme dat wordt uitgevoerd op basis van door mensen geformuleerde regels en zijn handmatig door mensen gebouwd, meestal op basis van wetten of verordeningen."@nl, 
+    "An algorithm that is run based on human-formulated rules and manually built by humans, usually based on laws or regulations."@en;
+  skosthes:broaderPartitive ar:Depricated;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:MachineLearningAlgorithm a skos:Concept;
+  rdfs:label "rule based"@en;
+  skos:prefLabel
+    "zelflerend algoritme"@nl,
+    "machine learning algorithm"@en;
+  skos:altLabel
+    "case based algorithm"@en,
+    "self-learning algorithm"@en;
+  skos:definition 
+    "Zelflerende algoritmes kunnen zelf verbanden ontdekken in gegevens."@nl, 
+    "A machine learning algorithm can discover connections in data themselves."@en;
+  skos:scopeNote 
+    "Hierbij gaat om een algoritme dat is ontwikkeld op basis van voorbeelden die worden aangeboden aan een AI-toepassing. Op basis van dit leermateriaal worden door een computer, in een black box, algoritmes opgebouwd (machine learning). Deep learning is een vorm van machine learning waarbij dit in meerdere lagen gebeurt. Een mooi voorbeeld hiervan is een AI-toepassing voor tekstanalyse die in een eerste laag gewoon Nederlands kan interpreteren en in een tweede laag juridisch jargon."@nl,
+    "This involves an algorithm that has been developed based on examples that are offered to an AI application. Based on this learning material, a computer builds algorithms in a black box (machine learning). Deep learning is a form of machine learning in which this happens in several layers. A good example of this is an AI application for text analysis that can interpret ordinary Dutch in a first layer and legal jargon in a second layer."@en;
+  skosthes:broaderPartitive ar:Depricated;
+  skos:inScheme schar:Algoritmeregister; 
+.
