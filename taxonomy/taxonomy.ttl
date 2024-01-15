@@ -23,13 +23,13 @@ schar:Algoritmeregister a skos:ConceptScheme;
   skos:prefLabel 
     "Begrippenkader algoritmeregister"@nl,
     "Concept scheme Dutch algorithm register"@en;
-  skos:editorialNote "Dit begrippenkader is nog niet formeel vastgesteld. De definities zijn ontleend aan versie 0.4a van het algoritmeregister zoals gepubliceerd op https://algoritmes.pleio.nl/attachment/entity/fcc09898-9513-4a84-a6ac-d8d538462215. De Engelstalige definitie zijn gebaseerd op de versie 0.2 van https://standaard.algoritmeregister.org/."@nl;
+  skos:editorialNote "Dit begrippenkader is nog niet formeel vastgesteld. De definities zijn ontleend aan versie 1.0.0a van het algoritmeregister zoals gepubliceerd op https://algoritmes.pleio.nl/attachment/entity/3f3de86f-6cc1-4229-92ba-658a7770291b. De Engelstalige definitie zijn gebaseerd op de versie 0.2 van https://standaard.algoritmeregister.org/."@nl;
 #  dcterms:creator "Ministerie van BZK";
   dcterms:description "Een thesaurus van alle concepten in de registratie van de inzet van modellen, algoritmes en AI in beleid en besluitvormingsprocessen in Nederlandse 0verheidsorganisaties.";
   dcterms:language "nl";
 #  dcterms:publisher "Ministerie van BZK";
   dcterms:rights <https://creativecommons.org/licenses/by/4.0/deed.nl>;
-  owl:versionInfo "0.4a";
+  owl:versionInfo "1.0.0a";
   skos:hasTopConcept 
     ar:Algorithm,
     ar:AlgorithmApplication,
@@ -126,32 +126,16 @@ ar:BasicInformation a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:Publicationcategory a skos:Concept;
-  rdfs:label "publicationcategory"@en;
-  skos:prefLabel 
-    "publicatiecategorie"@nl,
-    "publicationcategory"@en;
-  skos:definition 
-    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening 'Hoog-risico AI-systemen'."@nl; 
-  skos:scopenote
-    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), Overige algoritmes (Categorie C)"@nl;
-  skos:example
-    "Impactvolle algoritmes"@nl;
-  skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:BasicInformation;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
 ar:Name a skos:Concept;
   rdfs:label "name"@en;
   skos:prefLabel 
     "naam"@nl,
     "name"@en;
   skos:definition 
-    "De naam die gebruikt wordt om dit algoritme aan te duiden."@nl, 
-    "The colloquial name used to identify this algorithm."@en;
+    "De naam die gebruikt wordt om het algoritme aan te duiden."@nl, 
+    "The colloquial name used to identify the algorithm."@en;
   skos:scopenote
-    "De algemeen gehanteerde naam van het algoritme."@nl;
+    "Gebruik een naam, bij voorkeur met een werkwoord, die aangeeft wat het algoritme doet. Dit kan de algemeen gehanteerde naam zijn van het algoritme binnen de organisatie, mits begrijpelijk voor externen die niet bekend zijn met het algoritme."@nl;
   skos:example
     "Automatische Verkeersregeling Ringweg"@nl;
   skos:related ar:AlgorithmApplication;
@@ -168,7 +152,7 @@ ar:DescriptionShort a skos:Concept;
     "Een korte beschrijving van het algoritme."@nl, 
     "A short description of maximum 150 chars in order to give a quick overview of the purpose of the model, algorithm or AI."@en;
   skos:scopenote
-    "Een korte, duidelijke beschrijving van het algoritme en het proces waarin deze gebruikt wordt. Bij voorkeur in één of twee zinnen. Doel van dit veld is om bij het zoeken naar algoritmes een korte omschrijving van het algoritme te geven. Vul dit veld in op B1-taalniveau."@nl;
+    "Een korte, duidelijke beschrijving van het algoritme en het proces waarin deze gebruikt wordt. Bij voorkeur in twee of drie zinnen. Doel van dit veld is om snel begrip te krijgen van wat het algoritme doet. Het veld wordt weergegeven in het zoekoverzicht. Vul dit veld in op B1-taalniveau."@nl; 
   skos:example
     "Dit algoritme zorgt met sensoren in het wegdek ervoor dat het verkeer zo makkelijk mogelijk doorstroomt."@nl;
   skos:related ar:AlgorithmApplication;
@@ -185,7 +169,7 @@ ar:Organization a skos:Concept;
     "De volledige naam van de organisatie waar het algoritme ingezet wordt."@nl, 
     "The full name of the organization used to identify responsibility for use of the model, algorithm or AI"@en;
   skos:scopenote
-    "De volledige naam van de organisatie waar het algoritme ingezet wordt. In het geval van een uitvoeringsorganisatie vallend onder een ministerie: gebruik de naam van de uitvoeringsorganisatie zelf, gevolgd door de afkorting tussen haakjes."@nl;
+    "De volledige naam van de organisatie waar het algoritme ingezet wordt. Deze wordt gebaseerd op de TOOI-waardelijst: standaarden.overheid.nl Eén registratie kan maar over één organisatie gaan. Er kunnen dus niet meerdere waarden ingevuld worden. Indien een algoritme bij meerdere organisaties wordt ingezet, zijn aparte registraties vereist."@nl;
   skos:example
     "Gemeente Noorderhaaks"@nl;
   skos:related ar:AlgorithmApplication;
@@ -200,6 +184,8 @@ ar:Category a skos:Concept;
     "theme"@en;
   skos:altLabel
     "domein"@nl,
+    "categorie"@nl,
+    "beleidsterrein"@nl,
     "domain"@en;
   skos:definition 
     "Het beleidsterrein waarin het algoritme wordt ingezet."@nl, 
@@ -207,31 +193,12 @@ ar:Category a skos:Concept;
   skos:scopeNote 
     "Beleidsterrein(en) waarin het algoritme wordt ingezet. Zie voor mogelijke waarden: https://standaarden.overheid.nl/owms/4.0/doc/waardelijsten/thema-indeling-voor-officiele-publicaties"@nl;
   skos:example
-    "Mobiliteit"@nl;
+    "Verkeer"@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:BasicInformation;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:Type a skos:Concept;
-  rdfs:label "type of algorithm"@en;
-  skos:prefLabel
-    "publicatiecategorie"@nl,
-    "type of algorithm"@en;
-  skos:definition 
-    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening ‘Hoog-risico AI-systemen'. "@nl, 
-    "An indication wether the model, algorithm or AI is descriptive, diagnostic, predictive or prescriptive. This information can be used as a possible risk indicator."@en;
-  skos:scopeNote 
-    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), of Overige algoritmes (Categorie C) "@nl;
-  skos:example
-    "Impactvolle algoritmes"@nl;
-  skos:editorialNote 
-    "De Nederlandse definitie is geëvolueerd ten opzichte vand e oorspronkelijke Engelse definitie: impactcategorie versus descriptive, diagnostic, predictive or prescriptive."@nl,
-    "The Dutch definition differs from the English definition: impact category versus descriptive, diagnostic, predictive or prescriptive"@en;
-  skos:related ar:Algorithm;
-  skosthes:broaderPartitive ar:BasicInformation;
-  skos:inScheme schar:Algoritmeregister; 
-.
 
 ar:Status a skos:Concept;
   rdfs:label "status"@en;
@@ -258,7 +225,7 @@ ar:StartDate a skos:Concept;
   skos:definition
     "Maand waarin het algoritme in gebruik is genomen."@nl;
   skos:scopeNote
-    "Maand en jaar waarin het algoritme in gebruik is genomen."@nl;
+    "Maand en jaar waarin het algoritme in gebruik is genomen. Schrijf de datum zoals in dit voorbeeld: 2023-01."@nl;
   skos:example
     "2023-01"@nl;
   skos:related ar:AlgorithmApplication;
@@ -274,7 +241,7 @@ ar:EndDate a skos:Concept;
   skos:definition
     "Maand waarin het algoritme buiten gebruik is genomen."@nl;
   skos:scopeNote
-    "Maand en jaar waarin het algoritme buiten gebruik is genomen."@nl;
+    "Maand en jaar waarin het algoritme buiten gebruik is genomen. Als het algoritme nog in gebruik is, moet dit veld leeg blijven. Schrijf de datum zoals in dit voorbeeld: 2023-05"@nl;
   skos:example
     "2023-05"@nl;
   skos:related ar:AlgorithmApplication;
@@ -285,13 +252,13 @@ ar:EndDate a skos:Concept;
 ar:ContactEmail a skos:Concept;
   rdfs:label "contact person e-mail"@en;
   skos:prefLabel 
-    "contactggevens"@nl,
+    "contactgegevens"@nl,
     "contact data"@en;
   skos:definition 
     "De contactgegevens voor deze registratie"@nl, 
     "The contact data for this registration"@en;
   skos:scopeNote
-    "Het e-mailadres voor contact over deze registratie. Dit moet een geldig mailadres zijn waar burgers, media of andere betrokkenen vragen kunnen stellen over het algoritme zelf of over de gevolgen op basis van uitkomsten van het algoritme. Begin een URL met https://"@nl;
+    "Het e-mailadres of de website voor contact over deze registratie. Dit moet een geldig mailadres of website zijn waar burgers, media of andere betrokkenen vragen kunnen stellen over het algoritme zelf of over de gevolgen op basis van uitkomsten van het algoritme. Begin een website-URL met https://"@nl;
   skos:example
     "algoritmes@gemeentenoorderhaaks.nl"@nl;
   skos:related ar:AlgorithmApplication;
@@ -302,10 +269,11 @@ ar:ContactEmail a skos:Concept;
 ar:Website a skos:Concept;
   rdfs:label "website"@en;
   skos:prefLabel 
-    "publiekspagina"@nl,
+    "link naar publiekspagina"@nl,
     "website"@en;
   skos:altLabel
     "website"@nl,
+    "publiekspagina"@nl,
     "webpage"@en;
   skos:definition 
     "Een URL naar een publiekspagina van de organisatie zelf. Op deze pagina kunt u meer vinden over de inzet van het algoritme binnen de organisatie."@nl, 
@@ -320,21 +288,39 @@ ar:Website a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+
+ar:Publicationcategory a skos:Concept;
+  rdfs:label "publicationcategory"@en;
+  skos:prefLabel 
+    "publicatiecategorie"@nl,
+    "publicationcategory"@en;
+  skos:definition 
+    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening 'Hoog-risico AI-systemen'."@nl; 
+  skos:scopenote
+    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), Overige algoritmes (Categorie C)"@nl;
+  skos:example
+    "Impactvolle algoritmes"@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:BasicInformation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
 ar:Url a skos:Concept;
   rdfs:label "URL of the registration"@en;
   skos:prefLabel 
-    "URL van de bronregistratie (oud)"@nl,
+    "URL van de bronregistratie"@nl,
     "URL of the registration"@en;
   skos:definition 
-    "De URL van de locatie waar dit algoritme eerder al is vastgelegd; in machineleesbaar formaat. ."@nl, 
+    "De URL van de locatie waar dit algoritme eerder al is vastgelegd; in machineleesbaar formaat."@nl, 
     "URL of a human readable web page for this registration, for example on the organization web page or public algorithm register"@en;
-  skos:scopeNote "Instructies Als de organisatie zelf ook een Algoritmeregister gepubliceerd heeft , dan kan vanaf hiernaar verwezen worden. Decentrale registers kunnen gewenst zijn, bijvoorbeeld om de eigen doelgroep aan te spreken. Begin een URL met https:// "@nl;
+  skos:scopeNote "Als de organisatie zelf ook een Algoritmeregister gepubliceerd heeft, dan kan vanaf hiernaar verwezen worden. Decentrale registers kunnen gewenst zijn, bijvoorbeeld om de eigen doelgroep aan te spreken. Begin een URL met https:// "@nl;
   skos:example
     "https://algorithmes.gemeentenoorderhaaks.nl"@nl;
-  skosthes:broaderPartitive ar:BasicInformation;
+  skosthes:broaderPartitive ar:AlgorithmApplication;
   skosthes:broaderGeneric ar:Documentation;
   skos:inScheme schar:Algoritmeregister; 
 .
+
 
 ### USE CASE ###
 
@@ -354,14 +340,17 @@ ar:Goal a skos:Concept;
   rdfs:label "goal"@en;
   skos:prefLabel 
     "doel en impact"@nl,
-    "goal"@en;
+    "goal"@en;  
+  skos:altLabel
+  "doel"@nl,
+  "impact"@nl;
   skos:definition 
-    "Het doel waarvoor het algoritme ontwikkeld is en wat voor impact de inzet heeft op burgers en bedrijven."@nl, 
+    "Het doel waarvoor het algoritme ontwikkeld is en hoe burgers en bedrijven ermee in aanraking komen."@nl, 
     "The goals of the policy for which the algorithm is being/was put in place and how will the application expectedly contribute to reaching these goals?"@en;
   skos:scopeNote
-    "Het doel waarvoor het algoritme ontwikkeld is en wat voor impact de inzet heeft op burgers en bedrijven. Vul dit veld in op B1-taalniveau."@nl;
+    "Het doel waarvoor het algoritme ontwikkeld is, geeft aan wat je ermee wilt bereiken. Zo is het doel van een parkeerscanauto om sneller foutparkeerders op te sporen. De impact beschrijft hoe burgers en bedrijven ermee in aanraking komen. Het gaat hierbij om wat de impact is als het naar behoren werkt. Risico's worden behandeld in een apart veld. In het geval van de parkeerscanauto kunnen geparkeerde auto's gescand worden. Er wordt dan gekeken of zij betaald hebben met een direct resultaat. Vul dit veld in op B1-taalniveau."@nl;
   skos:example
-    "Het doel van dit algoritme is om de doorstroom van het verkeer binnen de gemeente te verbeteren. Door kortere wachttijden bij het stoplicht kunnen weggebruikers sneller van A naar B komen. De impact op een individu is dat het algoritme bepaalt wanneer diegene aan de beurt is om over het kruispunt te steken. De consequenties van deze impact zijn in alle waarschijnlijkheid erg klein. Het betreft een oponthoud van maximaal enkele minuten."@nl;
+    "Het doel van dit algoritme is om de doorstroom van het verkeer binnen de gemeente te verbeteren. De impact is dat weggebruikers sneller van A naar B kunnen komen door kortere wachttijden."@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:UseCase;
   skos:inScheme schar:Algoritmeregister; 
@@ -372,11 +361,13 @@ ar:Proportionality a skos:Concept;
   skos:prefLabel 
     "afwegingen"@nl,
     "proportionality"@en;
+  skos:altLabel
+    "proportionaliteit"@nl;
   skos:definition 
     "Een afweging van de voor- en nadelen van de inzet van het algoritme en waarom dit redelijk gerechtvaardigd is."@nl, 
     "An explanation why use of the algorithm is reasonably necessary and why the expected benefits outweigh any potential expected harm."@en;
   skos:scopeNote 
-    "Een afweging van de voor- en nadelen van de inzet van het algoritme en waarom dit redelijk gerechtvaardigd is. Benoem daarbij ook welke andere alternatieven overwogen zijn. Neem ook de ethische afwegingen mee in het invullen. Voor het invullen van dit veld kan gebruik gemaakt worden van de antwoorden uit het IAMA en de DPIA. Vul dit veld in op B1-taalniveau"@nl;
+    "Een afweging van de voor- en nadelen van de inzet van het algoritme en waarom dit redelijk gerechtvaardigd is. Benoem daarbij ook welke andere alternatieven overwogen zijn. Neem de eventuele ethische afwegingen mee in het invullen. Zo kan hier worden vermeld dat de inzet van een parkeerscanauto sneller en effectiever is vergeleken met menselijke controle. In dezelfde tijd kunnen meer auto's worden gecontroleerd. De besparing in mensen kan voor andere taken worden ingezet. De verhoogde kans op een foute boete wordt hierdoor gerechtvaardigd. Bovendien kunnen burgers altijd bezwaar aantekenen wat goed te controleren is. Voor het invullen van dit veld kan gebruik gemaakt worden van de antwoorden uit het IAMA en de DPIA. Vul dit veld in op B1-taalniveau."@nl;
   skos:example
     "De voordelen van de inzet van dit algoritme zijn bewezen door het gebruik ervan over de hele wereld. Op plekken waar dit algoritme gebruikt wordt, is de verkeersdoorstroming aanzienlijk beter dan op plekken waar dit niet gedaan wordt. Het alternatief is een standaardvolgorde aanhouden, wat bewezen trager is voor weggebruikers."@nl;
   skos:related ar:AlgorithmApplication;
@@ -393,7 +384,7 @@ ar:HumanIntervention a skos:Concept;
     "Een omschrijving van hoe uitkomsten van het algoritme door een mens gebruikt worden, en op welke wijze deze gebruikt, gecontroleerd en bijgesteld (kunnen) worden."@nl, 
     "Please describe how the outcomes of the algorithm can be intervened by humans. It should detail how the responsibility for possible human intervention is secured, so it's clear who can and may act."@en;
   skos:scopeNote
-    "Een omschrijving van hoe uitkomsten van het algoritme door een mens gebruikt worden, en op welke wijze deze gebruikt, gecontroleerd en bijgesteld (kunnen) worden. Vul dit veld in op B1-taalniveau."@nl;
+    "Een omschrijving van hoe uitkomsten van het algoritme door een mens gebruikt worden, en op welke wijze deze gebruikt, gecontroleerd en bijgesteld (kunnen) worden. Geef het ook aan indien er geen menselijke tussenkomst (nodig) is. Bijvoorbeeld bij slimme zoekopdrachten in grote databases. Hier is veelal geen menselijke controle of de gevonden waarden de juiste zijn. Vul dit veld in op B1-taalniveau."@nl;
   skos:example
     "Bij het maken van fouten door het algoritme zou een medewerker van de afdeling handmatig de verkeersregeling aan kunnen passen en stoplichten op groen kunnen zetten. Buiten normale werktijden is er 24/7 toezicht."@nl;
   skos:related ar:AlgorithmApplication;
@@ -410,7 +401,7 @@ ar:Risks a skos:Concept;
     "Een overzicht van hoe omgegaan wordt met risico's."@nl, 
     "Please indicate which risk assessment was used and give an overview of the risks and mitigation measures."@en;
   skos:scopeNote 
-    "Een overzicht van hoe omgegaan wordt met risico's."@nl;
+    "Een overzicht van hoe omgegaan wordt met risico's. Risico’s kunnen onder andere zijn technische, juridische, financiële en ethische risico’s De risico's kunnen divers zijn en verschillen sterk per algoritme. Maar denk bijvoorbeeld aan discriminatie en uitlegbaarheid. Beschrijf ook hoe met die risico's wordt omgegaan, bijvoorbeeld door periodieke monitoring."@nl;
   skos:example
     "Er is sprake van constante monitoring. Daardoor kan snel opgemerkt worden als een sensor defect is, waardoor weggebruikers lang stil moeten blijven staan. Dit kan dan snel verholpen worden om de nadelige gevolgen te beperken. Met enige regelmaat wordt ook in de praktijk gekeken naar of de sensoren voldoende reageren op de auto's en of de wachttijden eerlijk verdeeld zijn."@nl;
   skos:related ar:AlgorithmApplication;
@@ -418,66 +409,20 @@ ar:Risks a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
-ar:DPIA a skos:Concept;
-  rdfs:label "impact assessment"@en;
-  skos:prefLabel 
-    "impacttoets"@nl,
-    "impact assessment"@en;
-  skos:definition 
-    "Welke impacttoetsen zijn gebruikt, zoals Data Protection Impact Asssesment (DPIA) of Impact Assessment Mensenrechten en Algoritmes (IAMA)? "@nl; 
-  skos:scopeNote 
-    "Naam/namen van uitgevoerde impacttoetsen. Aanbevolen worden een 'Data Protection Impact Asssesment (DPIA)' en een 'Impact Assessment Mensenrechten en Algoritmes (IAMA)'"@nl;
-  skos:example
-    "Impact Assessment Mensenrechten en Algoritmes (IAMA)"@nl;
-  skos:related ar:AlgorithmApplication;
-  skosthes:broaderPartitive ar:UseCase;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:DPIADescription a skos:Concept;
-  rdfs:label "description of impact assesments"@en;
-  skos:prefLabel 
-    "link naar de impacttoets"@nl;
-  skos:definition 
-    "Link naar de resultaten van een uitgevoerde impacttoets, zoals een DPIA IAMA."@nl, 
-    "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
-  skos:scopeNote 
-    "Link naar de resultaten van een impacttoets, indien deze is uitgevoerd en publiek beschikbaar is. Een voorbeeld hiervan is het impact assessment mensenrechten en algoritmes (IAMA) of het data protection impact assessment (DPIA). Formateer het dusdanig dat de naam van de toets gevolgd wordt door een dubbele punt en de URL. Als er meerdere zijn, kunnen deze gescheiden worden door komma's. Begin een URL met https://"@nl;
-  skos:example
-    "DPIA: https://link.com, IAMA: https://link.nl"@nl;
-  skos:related ar:DPIA;
-  skosthes:broaderPartitive ar:UseCase;
-  skosthes:broaderGeneric ar:Documentation;
-  skos:inScheme schar:Algoritmeregister; 
-.
-
-ar:AssessmentExplanation a skos:Concept;
-  rdfs:label "explanation on assessments"@en;
-  skos:prefLabel 
-    "toelichting op impacttoetsen"@nl,
-    "explanation on assessments"@en;
-  skos:definition 
-    "Toelichting waarom bepaalde impacttoetsen niet gedaan zijn."@nl;
-  skos:scopeNote 
-    "Het is mogelijk dat er geen impacttoets nodig was voor het algoritme. Met dit veld kan toegelicht worden waarom bepaalde impacttoetsen niet gedaan zijn"@nl;
-  skos:example
-    "In het geval van de DPIA als er geen sprake is van persoonsgegevens."@nl;
-  skos:related ar:DPIA;
-  skosthes:broaderPartitive ar:UseCase;
-  skos:inScheme schar:Algoritmeregister; 
-.
 ar:LawfulBasis a skos:Concept;
   rdfs:label "lawful basis"@en;
   skos:prefLabel 
     "wettelijke basis"@nl,
     "lawful basis"@en;
+  skos:altLabel
+    "grondslag"@nl;
   skos:definition 
     "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl, 
     "Which administrative act makes the use of the algorithm legitimate?"@en;
   skos:scopeNote 
-    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt."@nl;
+    "Een omschrijving van de wettelijke basis voor het proces waarin het algoritme ingezet wordt. Geef waar mogelijk in het kort aan wat het doel is van deze wet, zodat dit ook voor niet-juristen begrijpelijk is."@nl;
   skos:example
-    ""@nl;
+    "Het algoritme wordt ingezet voor taken uit de Wegenverkeerswet. Een van de taken is het waarborgen van verkeersveiligheid."@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:UseCase;
   skos:inScheme schar:Algoritmeregister; 
@@ -493,7 +438,7 @@ ar:LawfulBasisSource a skos:Concept;
   skos:scopeNote 
     "Een link naar de wettelijke grondslag(en) voor het proces waarin het algoritme ingezet wordt. Bijvoorbeeld: een wet, een verordening of een formeel besluit."@nl;
   skos:example
-    "https://wetten.overheid.nl/BWBR0006622/2023-01-01"@nl;
+    "https://wetten.overheid.nl/BWBR0006622"@nl;
   skos:related ar:LawfulBasis;
   skosthes:broaderPartitive ar:UseCase;
   skosthes:broaderGeneric ar:Documentation;
@@ -532,6 +477,59 @@ ar:RecordsOfProcessingActivitiesLink a skos:Concept;
   skos:inScheme schar:Algoritmeregister; 
 .
 
+ar:DPIA a skos:Concept;
+  rdfs:label "impact assessment"@en;
+  skos:prefLabel 
+    "impacttoets"@nl,
+    "impact assessment"@en;
+  skos:altLabel
+  "IAMA"@nl,
+  "DPIA"@nl;
+  skos:definition 
+    "Welke impacttoetsen zijn gebruikt, zoals Data Protection Impact Asssesment (DPIA) of Impact Assessment Mensenrechten en Algoritmes (IAMA)? "@nl; 
+  skos:scopeNote 
+    "Naam/namen van uitgevoerde impacttoetsen. Indien er andere toetsen zijn uitgevoerd dan de DPIA of IAMA, geef hiervan de naam aan.'"@nl;
+  skos:example
+    "Data Protection Impact Assessment (DPIA)"@nl;
+  skos:related ar:AlgorithmApplication;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:DPIADescription a skos:Concept;
+  rdfs:label "description of impact assesments"@en;
+  skos:prefLabel 
+    "link naar de impacttoets"@nl;
+  skos:definition 
+    "Link naar de resultaten van een uitgevoerde impacttoets, zoals een DPIA IAMA."@nl, 
+    "An overview of the key points from the data protection impact assessment. It should explain how discrimination is prevented when (proxies of) ethnicity, sex or zipcode are being used."@en;
+  skos:scopeNote 
+    "Link naar de resultaten van een impacttoets, indien deze is uitgevoerd en publiek beschikbaar is. Een voorbeeld hiervan is het impact assessment mensenrechten en algoritmes (IAMA) of het data protection impact assessment (DPIA). Begin een URL met https://"@nl;
+  skos:example
+    "https://gemeentenoorderhaaks.nl/Archief/toetsen/AVR-IAMA"@nl;
+  skos:related ar:DPIA;
+  skosthes:broaderPartitive ar:UseCase;
+  skosthes:broaderGeneric ar:Documentation;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:AssessmentExplanation a skos:Concept;
+  rdfs:label "explanation on assessments"@en;
+  skos:prefLabel 
+    "toelichting op impacttoetsen"@nl,
+    "explanation on assessments"@en;
+  skos:definition 
+    "Toelichting waarom bepaalde impacttoetsen niet gedaan zijn."@nl;
+  skos:scopeNote 
+    "Het is mogelijk dat er geen impacttoets nodig was voor het algoritme. In het geval van de DPIA als er geen sprake is van persoonsgegevens. Met dit veld kan toegelicht worden waarom bepaalde impacttoetsen niet gedaan zijn"@nl;
+  skos:example
+    ""@nl;
+  skos:related ar:DPIA;
+  skosthes:broaderPartitive ar:UseCase;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+
 ### APPLICATION ###
 
 ar:Application a skos:Concept;
@@ -553,6 +551,8 @@ ar:SourceData a skos:Concept;
   skos:prefLabel 
     "gegevens"@nl,
     "source data"@en;
+  skos:altLabel
+    "brondata"@nl;
   skos:definition 
     "Een overzicht van de gegevens die gebruikt worden door het algoritme en/of in het begin gebruikt zijn bij het maken van het algoritme."@nl, 
     "Please give an overview of the data that is being processed by the algorithm. It should describe the pupose with which each data source is added and possible dependencies that result from this."@en;
@@ -561,7 +561,7 @@ ar:SourceData a skos:Concept;
     "The Dutch and English definitions are not the same: data sources for creating or training versus sources for processing."@en;  
   skosthes:broaderPartitive ar:Application;
   skos:scopeNote 
-    "Een overzicht van de gegevens die gebruikt worden door het algoritme en/of in het begin gebruikt zijn bij het maken van het algoritme"@nl;
+    "Een overzicht van de gegevens die gebruikt worden door het algoritme en/of in het begin gebruikt zijn bij het maken van het algoritme. Waar mogelijk, wees specifiek. Met name voor wat betreft persoonsgegevens is het belangrijk te weten om welk type gegevens het gaat (bijvoorbeeld adres, geboorteplaats, leeftijd). Benoem waar mogelijk ook de bron zoals BRP of BKR of organisatie eigen klantgegevens."@nl;
   skos:example
     "Sensordata van de verkeersregelinstallaties bij kruispunten op de ringweg van gemeente Noorderhaaks."@nl;
   skos:related ar:Algorithm;
@@ -574,9 +574,9 @@ ar:SourceDataset a skos:Concept;
     "link naar gegevensbronnen"@nl,
     "source data set"@en;
   skos:definition 
-    "Links naar aanvullende informatie over de gebruikte gegevensbronnen"@nl;
+    "Link naar aanvullende informatie over de gebruikte gegevensbronnen"@nl;
   skos:scopeNote 
-    "Lijst van links naar aanvullende informatie over de gebruikte gegevensbronnen. Hierbij kan bijvoorbeeld gelinkt worden naar metadata in publieke datacatalogi of naar sensorenregistraties."@nl;
+    "Een link naar een beschrijving van gegevens die gebruikt worden door het algoritme en/of in het begin gebruikt zijn bij het maken van het algoritme. Hierbij kan bijvoorbeeld gelinkt worden naar metadata in publieke datacatalogi of naar sensorenregistraties."@nl;
   skos:example
     "https://datacatalogus.gemeentenoorderhaaks.nl/"@nl;
   skos:related ar:SourceData;
@@ -610,7 +610,7 @@ ar:MethodsAndModels a skos:Concept;
     "Uitleg van hoe het algoritme werkt."@nl, 
     "Please indicate which known methods or models the algorithm is using."@en ;
   skos:scopeNote 
-    "Uitleg van hoe het algoritme werkt."@nl;
+    "Uitleg van hoe het algoritme werkt. Beschrijf de input, werking en output van het algoritme. Indien beschikbaar, komt een URL naar een schematisch overzicht van het model (zoals een stroomdiagram van een beslisboom) goed van pas. Indien complexe machine learning modellen worden gebruikt (zoals Neurale Netwerken), komen URL’s naar extra documentatie of wetenschappelijke publicaties goed van pas. Dit veld is hoofdzakelijk bedoeld voor de lezer met technische expertise, en mag daarom complexere concepten en taal bevatten. Geef tenminste aan of het zelflerend is of niet."@nl;
   skos:example
     "Het model maakt gebruik van een eenvoudige beslisboom zodra een nieuwe bezette voorsorteerstrook zich voordoet (= wanneer de sensor een weggebruiker ontdekt). De beslisboom loopt als volgt: Eerst wordt er gekeken of er al andere partijen staan te wachten, en vervolgens of er op dat moment een andere voorsorteerstrook op groen licht staat. Zo niet, dan springt het stoplicht van de betreffende strook meteen op groen. Zo wel, dan wacht het tot er geen verkeer meer wordt waargenomen bij de andere voorsorteerstrook. Als er andere weggebruikers op andere stroken staan te wachten, sluit de betreffende strook achteraan in de wachtrij. Een grafische weergave van dit model is te vinden op https://algoritmes.gemeentenoorderhaaks.nl/VRI"@nl;
   skosthes:broaderPartitive ar:Application;
@@ -674,9 +674,9 @@ ar:Lang a skos:Concept;
     "language"@en;
   skos:definition 
     "De taal waarin deze registratie is ingevoerd."@nl, 
-    "ISO 639-1 for the language in which this registration was filled in"@en;
+    "ISO 639-3 for the language in which this registration was filled in"@en;
   skos:scopeNote 
-    "De code van de taal van de registratie. Dit veld is aanwezig, omdat het Algoritmeregister meertalig aangeboden kan worden. Op dit moment wordt alleen Nederlands (nld) aangeboden."@nl;
+    "De code van de taal van de registratie. Dit veld is aanwezig, omdat het Algoritmeregister meertalig aangeboden kan worden. Op dit moment wordt alleen Nederlands (nld) aangeboden. De talen zijn in ISO 639-3 code."@nl;
   skos:example
     "nld"@nl;
   skos:related ar:AlgorithmApplication;
@@ -688,13 +688,15 @@ ar:Schema a skos:Concept;
   rdfs:label "schema"@en;
   skos:prefLabel 
     "versie publicatiestandaard"@nl;
+  skos:altLabel
+    "publicatiestandaard"@nl;
   skos:definition 
     "De versie van de publicatiestandaard waar dit algoritme in is geregistreed."@nl, 
     "Version of the standard used for this registration"@en;
   skos:scopeNote 
-    "De versie van de publicatiestandaard die gehanteerd is voor deze registratie.Op dit moment is dat '0.4.0'."@nl;
+    "De versie van de publicatiestandaard die gehanteerd is voor deze registratie.Op dit moment is dat '1.0.0'.Ten behoeve van de websitefunctionaliteit is het noodzakelijk om geen andere informatie in dit veld op te nemen dan een van de keuzes hierboven"@nl;
   skos:example
-    "0.4.0"@nl;
+    "1.0.0"@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:Metadata; 
   skos:inScheme schar:Algoritmeregister; 
@@ -709,7 +711,7 @@ ar:SourceId a skos:Concept;
   skos:scopeNote 
     "Indien van toepassing, de unieke identificatie voor deze registratie zoals door de eigenaar wordt gehanteerd. Dit is dus de verwijzing naar het algoritme in de interne database of het interne register van uw organisatie."@nl;
   skos:example
-    ""@nl;
+    "n.v.t."@nl;
   skos:related ar:AlgorithmApplication;
   skosthes:broaderPartitive ar:Metadata;
   skos:inScheme schar:Algoritmeregister; 
@@ -719,6 +721,9 @@ ar:Tag a skos:Concept;
   rdfs:label "tag"@en;
   skos:prefLabel 
     "zoekterm"@nl;
+  skos:altLabel
+    "trefwoord"@nl,
+    "tag"@nl;
   skos:definition 
     "Trefwoord over het algoritme, om de vindbaarheid van een algoritmeregistratie te vergroten."@nl;
   skos:scopeNote 
@@ -739,7 +744,7 @@ ar:Depricated a skos:Concept;
     "vervallen begrippen"@nl,
     "depricated concepts"@en;
   skos:definition 
-    "Vervallen begrippen die zijn gebruikt in oudere versies dan versie 0.4."@nl; 
+    "Vervallen begrippen die zijn gebruikt in oudere versies dan versie 1.0.0."@nl; 
   skos:inScheme schar:Algoritmeregister; 
 .
 
@@ -959,6 +964,7 @@ ar:RuleBasedAlgorithm a skos:Concept;
   skos:definition 
     "Een algoritme dat wordt uitgevoerd op basis van door mensen geformuleerde regels en zijn handmatig door mensen gebouwd, meestal op basis van wetten of verordeningen."@nl, 
     "An algorithm that is run based on human-formulated rules and manually built by humans, usually based on laws or regulations."@en;
+  skos:editorialNote "Dit begrip is vervallen in versie 1.0.0"@nl;
   skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
 .
@@ -977,6 +983,27 @@ ar:MachineLearningAlgorithm a skos:Concept;
   skos:scopeNote 
     "Hierbij gaat om een algoritme dat is ontwikkeld op basis van voorbeelden die worden aangeboden aan een AI-toepassing. Op basis van dit leermateriaal worden door een computer, in een black box, algoritmes opgebouwd (machine learning). Deep learning is een vorm van machine learning waarbij dit in meerdere lagen gebeurt. Een mooi voorbeeld hiervan is een AI-toepassing voor tekstanalyse die in een eerste laag gewoon Nederlands kan interpreteren en in een tweede laag juridisch jargon."@nl,
     "This involves an algorithm that has been developed based on examples that are offered to an AI application. Based on this learning material, a computer builds algorithms in a black box (machine learning). Deep learning is a form of machine learning in which this happens in several layers. A good example of this is an AI application for text analysis that can interpret ordinary Dutch in a first layer and legal jargon in a second layer."@en;
+  skos:editorialNote "Dit begrip is vervallen in versie 1.0.0"@nl;
+  skosthes:broaderPartitive ar:Depricated;
+  skos:inScheme schar:Algoritmeregister; 
+.
+
+ar:Type a skos:Concept;
+  rdfs:label "type of algorithm"@en;
+  skos:prefLabel
+    "type algoritme"@nl,
+    "type of algorithm"@en;
+  skos:definition 
+    "Om te bepalen welke algoritmes gepubliceerd moeten worden, is onderscheid gemaakt tussen impactvolle en overige algoritmes. Ook definieert de AI-verordening ‘Hoog-risico AI-systemen'. "@nl, 
+    "An indication wether the model, algorithm or AI is descriptive, diagnostic, predictive or prescriptive. This information can be used as a possible risk indicator."@en;
+  skos:scopeNote 
+    "Tot welke categorie een algoritme behoort volgens de handreiking: Hoog-risico AI-systeem (Categorie A), Impactvolle algoritmes (Categorie B), of Overige algoritmes (Categorie C) "@nl;
+  skos:example
+    "Impactvolle algoritmes"@nl;
+  skos:editorialNote 
+    "De Nederlandse definitie is geëvolueerd ten opzichte vand e oorspronkelijke Engelse definitie: impactcategorie versus descriptive, diagnostic, predictive or prescriptive."@nl,
+    "The Dutch definition differs from the English definition: impact category versus descriptive, diagnostic, predictive or prescriptive"@en;
+  skos:editorialNote "Dit begrip is vervallen in versie 0.4"@nl;
   skosthes:broaderPartitive ar:Depricated;
   skos:inScheme schar:Algoritmeregister; 
 .
